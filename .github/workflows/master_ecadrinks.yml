@@ -32,5 +32,5 @@ jobs:
         app-name: 'ecadrinks'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_dae07d38865d4007861849fd063a3a2b }}
-        package: .
+        package: ./ec-asia-drinks
 
