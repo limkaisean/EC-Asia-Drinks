@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import cartBeverages from "./cart";
-import orderBeverages from "./orders";
+import cart from "./cart";
+import orders from "./orders";
 
-export default combineReducers({ orderBeverages, cartBeverages });
+export default combineReducers({ orders, cart });

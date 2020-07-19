@@ -2,13 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import Button from '@material-ui/core/Button';
 
-import store from '../../../redux/store';
-import { addBeverage, reduceBeverage, removeBeverage } from '../../../redux/actions';
-
-function handleAddBeverage(beverage) {
-    store.dispatch(addBeverage(beverage));
-    console.log(store.getState());
-}
+import { incrementBeverage, reduceBeverage, removeBeverage } from '../../../redux/actions';
 
 function Beverage(props) {
     const dispatch = useDispatch();
@@ -21,23 +15,28 @@ function Beverage(props) {
                         props.info.name
                     }
                 </div>
-                
+                <div style={options}>
+                    {
+                        Object.keys(props.info.optionValues).map((option, _) => {
+                            return <div><span>{option}:</span> <span style={optionValue}>{props.info.optionValues[option]}</span></div>
+                        })
+                    }
+                </div>
             </div>
             <div style={buttonContainer}>
-                <button style={quantityButton} onClick={() => dispatch(addBeverage({id: props.info.id}))}>
+                <button style={quantityButton} onClick={() => dispatch(incrementBeverage({ id: props.info.id }))}>
                     +
                 </button>
                 <div style={quantity}>
-                    {props.quantity}
+                    {props.info.quantity}
                 </div>
-                <button style={quantityButton} onClick={() => dispatch(reduceBeverage({id: props.info.id}))}>
+                <button style={quantityButton} onClick={() => dispatch(reduceBeverage({ id: props.info.id }))}>
                     -
                 </button>
-                <Button style={deleteButton} onClick={() => dispatch(removeBeverage({id: props.info.id}))}>
-                    del
+                <Button style={deleteButton} onClick={() => dispatch(removeBeverage({ id: props.info.id }))}>
+                    &#128465;
                 </Button>
             </div>
-            
         </div>
     );
 }
@@ -45,54 +44,18 @@ function Beverage(props) {
 /* CSS */
 
 const panel = {
-    minHeight: '100px',
+    margin: '1em auto',
+    paddingBottom: '20px',
+    minHeight: '170px',
     height: '10%',
     minWidth: '700px',
     width: '100%',
-    backgroundColor: '#FFECD0',
-    borderRadius: '2px',
+    backgroundColor: '#f6c667',
+    borderRadius: '12px',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between'
-};
-
-const buttonContainer = {
-   display: 'flex',
-   flexDirection: 'row'
-};
-
-const quantity = {
-    height: '60px',
-    width: '60px',
-    backgroundColor: '#f3f3f3',
-    color: '#222831',
-    fontSize: '27px',
-    borderRadius: '20%',
-    border: 'none',
-    marginRight: '40px'
-};
-
-const quantityButton = {
-    height: '40px',
-    width: '40px',
-    backgroundColor: '#f3f3f3',
-    color: 'orange',
-    fontSize: '28px',
-    borderRadius: '10ox',
-    border: '3px solid orange',
-    marginRight: '40px',
-};
-
-const deleteButton = {
-    height: '50px',
-    width: '50px',
-    backgroundColor: '#f3f3f3',
-    color: '#222831',
-    fontSize: '18px',
-    borderRadius: '20%',
-    border: 'none',
-    marginRight: '40px'
 };
 
 const name = {
@@ -102,21 +65,58 @@ const name = {
     fontWeight: '900',
 };
 
-const description = {
+const options = {
+    display: 'flex',
+    flexDirection: 'column',
+    fontSize: '20px',
     textAlign: 'left',
-    fontSize: '26px',
-    padding: '10px 30px',
-    width: '80%',
-    minWidth: '20%'
+    padding: '0 30px'
+};
+
+const optionValue = {
+    fontSize: '22px',
+    color: 'orange',
+    fontWeight: '900'
+};
+
+const buttonContainer = {
+   display: 'flex',
+   flexDirection: 'row',
+   alignItems: 'center'
+};
+
+const quantity = {
+    color: '#222831',
+    fontSize: '48px',
+    fontWeight: '900',
+    color: 'orange',
+    borderRadius: '20%',
+    border: 'none',
+    marginRight: '30px'
+};
+
+const quantityButton = {
+    width: '40px',
+    backgroundColor: '#f3f3f3',
+    color: 'orange',
+    fontSize: '28px',
+    border: '3px solid orange',
+    marginRight: '30px',
+    textAlign: 'center'
+};
+
+const deleteButton = {
+    color: '#222831',
+    fontSize: '24px',
+    borderRadius: '20%',
+    border: 'none',
+    marginLeft: '50px',
+    marginRight: '40px',
+    paddingBottom: '10px'
 };
 
 const bold = {
     fontWeight: '700'
-};
-
-const id = {
-    marginTop: '2px',
-    textAlign: 'left',
 };
 
 export default Beverage;

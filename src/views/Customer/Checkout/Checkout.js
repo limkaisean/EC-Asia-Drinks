@@ -1,57 +1,65 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '@material-ui/core/Button';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 import { removeAllBeverages } from '../../../redux/actions';
 
 import Header from '../../../components/Header';
 import Beverage from './Beverage';
 
-const TITLE = 'CHECKOUT';
+import BEVERAGES from '../../../menu';
 
-const BEVERAGES = [
-    {
-        id: 0,
-        quantity: 2,
-        name: 'Full-Leaf Brewed Tea',
-        description: "From the British classic afternoon tea to the Chinese tea ceremony, the tradition of sipping on a relaxing cup of tea is celebrated all over the world. We offer 8 amazing blends of full-leaf teas, made with the world's most delicious teas and botanicals."
-    },
-    {
-        id: 1,
-        quantity: 1,
-        name: 'Tea Latte',
-        description: "A frothy reinvention of the favorite latte. Savor your latte with the bright lavender notes of Earl Grey tea or sip on a malty English Breakfast Tea Latte, made from a select brand of rich teas from India and Sri Lanka."
-    },
-    {
-        id: 2,
-        quantity: 3,
-        name: 'Pure Matcha Tea Latte',
-        description: "Meet the Pure Matcha Tea Latte – a smooth, creamy and lightly sweetened beverage that's made from premium microground matcha and served with steamed milk. Available hot and iced and you can opt to have yours unsweetened too."
-    }
-];
+const TITLE = 'CHECKOUT';
+const ORDER_SUCCESS_MSG = 'Your order has been successfully placed!';
+const ORDER_FAILED_MSG = 'We are unable to place your order, please try again or contact our staff';
+const EMPTY_CART_MESSAGE = 'Add beverages from the home page!';
 
 function handleOrder(websocket, byIds) {
-    websocket.emit('order_request', byIds);
+    if (Object.keys(byIds).length > 0) websocket.emit('order_request', byIds);
 }
+
+function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  }
 
 function Checkout(props) {
     const dispatch = useDispatch();
-    const byIds = useSelector(state => state.cartBeverages);
+    const byIds = useSelector(state => {
+        return state.cart.beverages;
+    });
 
-    const [orders, setOrders] = useState([]);
+    const [openSuccessToast, setOpenSuccessToast] = useState(false);
+    const [openFailureToast, setOpenFailureToast] = useState(false);
 
     useEffect(() => {
         if (!props.websocket) return;
-
+        
         props.websocket.on('order_response', data => {
-            dispatch(removeAllBeverages());
-            // show toast notification
+            if (data.isSuccessful) {
+                setOpenSuccessToast(true);
+                dispatch(removeAllBeverages());
+            } else {
+                setOpenFailureToast(true);
+            }            
         });
 
     }, [props.websocket]);
     
     return (
         <div style={main}>
+            <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }} open={openSuccessToast} autoHideDuration={6000} onClose={() => setOpenSuccessToast(false)}>
+                <Alert onClose={() => setOpenSuccessToast(false)} severity="success">
+                    {ORDER_SUCCESS_MSG}
+                </Alert>
+            </Snackbar>
+            <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }} open={openFailureToast} autoHideDuration={6000} onClose={() => setOpenFailureToast(false)}>
+                <Alert onClose={() => setOpenFailureToast(false)} severity="error">
+                   {ORDER_FAILED_MSG}
+                </Alert>
+            </Snackbar>
+
             <Header title={TITLE} />
             <div style={heading}>
                 Beverages
@@ -63,16 +71,19 @@ function Checkout(props) {
             </div>
             <div style={beverages}>
                 {
-                    BEVERAGES.map((bev, i) => {
-                        return <Beverage key={bev.id} info={bev} />
-                    })
+                    Object.keys(byIds).length > 0 ? 
+                        Object.keys(byIds).map((id, i) => {
+                            const beverageName = byIds[id].name;
+                            return <Beverage key={id} info={{ ...BEVERAGES[beverageName], ...byIds[id], id}} />
+                        }) :
+                        EMPTY_CART_MESSAGE
                 }
             </div>
             <br />
             <br />
             <br />
             
-            <Button style={orderButton} onClick={() => handleOrder(props.websocket, dispatch)}>
+            <Button style={orderButton} onClick={() => handleOrder(props.websocket, byIds)}>
                 Order
             </Button>
             {/* to conditionally render: */}
@@ -98,8 +109,7 @@ const heading = {
 };
 
 const beverages = {
-    marginTop: '20px',
-    marginLeft: '40px'
+    padding: '40px'
 };
 
 const clearContainer = {

@@ -7,7 +7,6 @@ function Beverage(props) {
     const dispatch = useDispatch();
 
     return (
-    
         <div style={panel}>
             <div>
                 <div style={name}>
@@ -22,9 +21,13 @@ function Beverage(props) {
                 </div>
             </div>
             <div style={addButtonContainer}>
-                    <button style={addButton} onClick={() => dispatch(addBeverage({id: props.info.id}))}>
-                        +
-                    </button>
+                <button style={addButton} onClick={() => dispatch(addBeverage({ ...props.info, quantity: 1, optionValues: { // TODO: remove mock data
+                    'Milk': 'Fresh Milk',
+                    'Sweetener': 'Caramel',
+                    'Sugar Level': '25%'
+                }}))}>
+                    +
+                </button>
             </div>
         </div>
     );

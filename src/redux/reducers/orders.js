@@ -1,7 +1,7 @@
 import { ADD_ORDER, REMOVE_ORDER } from "../actionTypes";
 
 const initialState = {
-  orders: {}
+  beverages: []
 };
 
 export default function(state = initialState, action) {
@@ -11,10 +11,10 @@ export default function(state = initialState, action) {
        
       return {
         ...state,
-        orders: {
-          ...state.orders,
+        beverages: {
+          ...state.beverages,
           [id]: {
-            ...state.orders[id],
+            ...state.beverages[id],
             time: time,
             status: status
           }
@@ -23,9 +23,9 @@ export default function(state = initialState, action) {
     }
     case REMOVE_ORDER: {
       const { id } = action.payload;
-      const { [id]: value, ...without} = state.orders;
+      const { [id]: value, ...without} = state.beverages;
       return Object.assign({}, state, {
-        byIds: without
+        beverages: without
       });
     }
     default:
