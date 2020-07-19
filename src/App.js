@@ -10,7 +10,10 @@ import Checkout from './views/Customer/Checkout/Checkout';
 import Orders from './views/Customer/Orders/Orders';
 import Navbar from "./components/Navbar";
 
-const Endpoint = 'http://127.0.0.1:5000';
+const Endpoint = process.env.NODE_ENV === 'development' ? 
+  'http://127.0.0.1:5000' : 'https://ec-asia-app.azurewebsites.net:5000/';
+
+console.log()
 
 function App() {
   const [websocket, setWebsocket] = useState(null);
