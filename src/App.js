@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import socketIOClient from 'socket.io-client';
-import { Route, Switch  } from 'react-router-dom'
+import { BrowserRouter, Route, Switch  } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import store from './redux/store';
@@ -31,6 +31,7 @@ function App() {
   return (
       <div className="App">
         <main>
+        <BrowserRouter>
           <Navbar />
           <Switch>
             <Provider store={store}>
@@ -40,6 +41,7 @@ function App() {
               <Route path="/orders" render={props => <Orders websocket={websocket} />} />
             </Provider>
           </Switch>
+        </BrowserRouter>
         </main>
       </div>
   );
