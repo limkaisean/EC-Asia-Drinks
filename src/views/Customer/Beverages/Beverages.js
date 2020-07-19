@@ -12,9 +12,22 @@ function Beverages() {
         <div style={main}>
             <Header title={TITLE} />
             <div style={beverages}>
+                <h1 style={types}>Tea</h1>
                 {
                     Object.keys(BEVERAGES).map((name, _) => {
-                        return <Beverage info={BEVERAGES[name]} />
+                        if (BEVERAGES[name].group == 'Teas'){
+                            return <Beverage info={BEVERAGES[name]} />
+                        } 
+                    })
+                }
+            </div>
+            <div style={beverages}>
+                <h1 style={types}>Coffee</h1>
+                {
+                    Object.keys(BEVERAGES).map((name, _) => {
+                        if (BEVERAGES[name].group == 'Coffees'){
+                            return <Beverage info={BEVERAGES[name]} />
+                        } 
                     })
                 }
             </div>
@@ -23,12 +36,17 @@ function Beverages() {
 }
 
 const main = {
-    height: '100vh',
+    //height: '100vh',
     backgroundColor: '#FFECD0'
 };
 
 const beverages = {
     padding: '15px',
+};
+
+const types = {
+    fontSize: '40px',
+    fontFamily: 'Lato',
 };
 
 export default Beverages;
