@@ -1,42 +1,56 @@
+import _ from 'underscore'; 
+
 import { ADD_BEVERAGE, INCREMENT_BEVERAGE, REDUCE_BEVERAGE, REMOVE_BEVERAGE, REMOVE_ALL_BEVERAGES } from "../actionTypes";
 
 const initialState = {
   beverages: {}
 };
 
+
+let globalId = 0;
+
 export default function(state = initialState, action) {
   switch (action.type) {
     case ADD_BEVERAGE: {
-      const { name, quantity, optionValues } = action.payload;
-
-      const id = Object.keys(state.beverages).length;
-      const stateCopy = Object.assign({}, state);
+      const beverage = Object.assign({}, action.payload);
+      const newQuantity = beverage.quantity;
+    
+      const beverageExists = Object.keys(state.beverages)
+        .filter(k => {
+          const otherBeverage = state.beverages[k];
+          // set the quantity to be identical as it is not a factor in determining if two beverage orders are the same
+          beverage.quantity = otherBeverage.quantity; 
+          return _.isEqual(beverage, otherBeverage);
+        });
+      beverage.quantity = newQuantity;
       
+      let id;
+      if (beverageExists.length > 0) {
+        id = beverageExists[0];
+        beverage.quantity += state.beverages[id].quantity;
+      } else {
+        id = globalId;
+        globalId++;
+      }
+
       return {
-        ...stateCopy,
+        ...state,
         beverages: {
-          ...stateCopy.beverages,
-          [id]: {
-            name: name,
-            quantity: quantity,
-            optionValues: { ...optionValues }
-          }
+          ...state.beverages,
+          [id]: beverage
         }
       };
     }
     case INCREMENT_BEVERAGE: {
       const { id } = action.payload;
-      console.log(id, 'uid');
       const currentQuantity = state.beverages[id] ? state.beverages[id].quantity : 0;
       
-      const stateCopy = Object.assign({}, state);
-
       return {
-        ...stateCopy,
+        ...state,
         beverages: {
-          ...stateCopy.beverages,
+          ...state.beverages,
           [id]: {
-            ...stateCopy.beverages[id],
+            ...state.beverages[id],
             quantity: currentQuantity + 1,
           }
         }

@@ -32,17 +32,17 @@ function App() {
   return (
       <div className="App">
         <main>
-        <BrowserRouter>
-          <Navbar />
-          <Switch>
-            <Provider store={store}>
-              <Route path="/" render={props => <Beverages websocket={websocket} />} exact />
-              <Route path="/beverages" render={props => <Beverages websocket={websocket} />} />
-              <Route path="/checkout" render={props => <Checkout websocket={websocket} />} />
-              <Route path="/orders" render={props => <Orders websocket={websocket} />} />
-            </Provider>
-          </Switch>
-        </BrowserRouter>
+          <BrowserRouter>
+            <Navbar />
+            <Switch>
+              <Provider store={store}>
+                <Route path="/" render={props => <Beverages websocket={websocket} />} exact />
+                <Route path="/beverages" render={props => <Beverages websocket={websocket} />} />
+                <Route path="/checkout" render={props => <Checkout websocket={websocket} />} />
+                <Route path="/orders" render={props => <Orders websocket={websocket} />} />
+              </Provider>
+            </Switch>
+          </BrowserRouter>
         </main>
       </div>
   );

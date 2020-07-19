@@ -79,15 +79,11 @@ function Checkout(props) {
                         EMPTY_CART_MESSAGE
                 }
             </div>
-            <br />
-            <br />
-            <br />
-            
-            <Button style={orderButton} onClick={() => handleOrder(props.websocket, byIds)}>
-                Order
-            </Button>
-            {/* to conditionally render: */}
-            {/* Add beverages from the home page! */}
+            <div style={footing}>
+                <Button style={orderButton} onClick={() => handleOrder(props.websocket, byIds)}>
+                    Order
+                </Button>
+            </div>
         </div> 
     )
 }
@@ -108,8 +104,15 @@ const heading = {
     fontSize: '47px'
 };
 
+const footing = {
+    backgroundColor: '#FFECD0',
+    paddingBottom: '40px',
+    textAlign: 'right'
+};
+
 const beverages = {
-    padding: '40px'
+    padding: '40px',
+    backgroundColor: '#FFECD0'
 };
 
 const clearContainer = {
@@ -119,7 +122,7 @@ const clearContainer = {
 
 const orderButton = {
     width: '170px',
-    height: '70px',
+    minHeight: '70px',
     marginLeft: 'auto',
     marginRight: '40px',
     fontFamily: 'Lato',
