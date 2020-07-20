@@ -7,7 +7,7 @@ function Beverage(props) {
     const dispatch = useDispatch();
 
     return (
-        <div style={panel}>
+        <div style={panel} onClick={props.customClick}>
             <div>
                 <div style={name}>
                     {
