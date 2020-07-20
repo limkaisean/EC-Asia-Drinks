@@ -1,33 +1,37 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import PopUp from './PopUp';
+
 import { addBeverage } from '../../../redux/actions';
 
 function Beverage(props) {
     const dispatch = useDispatch();
 
     return (
-        <div style={panel} onClick={props.customClick}>
-            <div>
-                <div style={name}>
-                    {
-                        props.info.name
-                    }
+        <div onClick={props.customClick}>
+            <div style={panel}>
+                <div>
+                    <div style={name}>
+                        {
+                            props.info.name
+                        }
+                    </div>
+                    <div style={description}>
+                        {
+                            props.info.description
+                        }
+                    </div>
                 </div>
-                <div style={description}>
-                    {
-                        props.info.description
-                    }
+                <div style={addButtonContainer}>
+                    <button style={addButton} onClick={() => dispatch(addBeverage({ ...props.info, quantity: 1, optionValues: { // TODO: remove mock data
+                        'Milk': 'Fresh Milk',
+                        'Sweetener': 'Caramel',
+                        'Sugar Level': '25%'
+                    }}))}>
+                        +
+                    </button>
                 </div>
-            </div>
-            <div style={addButtonContainer}>
-                <button style={addButton} onClick={() => dispatch(addBeverage({ ...props.info, quantity: 1, optionValues: { // TODO: remove mock data
-                    'Milk': 'Fresh Milk',
-                    'Sweetener': 'Caramel',
-                    'Sugar Level': '25%'
-                }}))}>
-                    +
-                </button>
             </div>
         </div>
     );
