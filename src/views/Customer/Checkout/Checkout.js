@@ -4,14 +4,14 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
-import { removeAllBeverages } from '../../../redux/actions';
+import { removeAllBeverages, addOrder } from '../../../redux/actions';
 
 import Header from '../../../components/Header';
 import Beverage from './Beverage';
 
 import BEVERAGES from '../../../menu';
 
-const TITLE = 'CHECKOUT';
+const TITLE = 'Checkout';
 const ORDER_SUCCESS_MSG = 'Your order has been successfully placed!';
 const ORDER_FAILED_MSG = 'We are unable to place your order, please try again or contact our staff';
 const EMPTY_CART_MESSAGE = 'Add beverages from the home page!';

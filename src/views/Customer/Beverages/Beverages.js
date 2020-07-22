@@ -5,7 +5,7 @@ import Beverage from './Beverage';
 
 import BEVERAGES from '../../../menu';
 
-const TITLE = "BEVERAGES";
+const TITLE = "Beverages";
 
 function Beverages() {
     return (
