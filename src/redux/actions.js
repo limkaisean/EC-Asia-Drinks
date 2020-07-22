@@ -22,7 +22,3 @@ export function removeBeverage(id) {
 export function removeAllBeverages() {
     return { type: REMOVE_ALL_BEVERAGES }
 }
-
-export function addOrder(info) {
-    return { }
-}
