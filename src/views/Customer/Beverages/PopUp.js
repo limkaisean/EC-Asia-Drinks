@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
+import Alert from '@material-ui/lab/Alert';
 
 import { addBeverage } from '../../../redux/actions';
 import { useDispatch } from 'react-redux';
@@ -28,12 +29,19 @@ function PopUp(props){
             optionValues['Comment'] = comments;
         }
 
-        dispatch(addBeverage({ ...props.info, quantity: quantity, optionValues: optionValues}));
-        props.handleClose();
+        if (quantity !== ''){
+            dispatch(addBeverage({ ...props.info, quantity: quantity, optionValues: optionValues}));
+            props.handleClose();
+        }
+
+        else {
+            setFailure(true);
+        }
     }
     const [quantity, setQuantity] = React.useState('');
     const [comments, setComments] = React.useState('');
     const [options, setOptions] = React.useState({});
+    const [failure, setFailure] = React.useState(false);
 
     const onRadioChange = (event) => {
         props.info.options.map((option) => {
@@ -103,6 +111,9 @@ function PopUp(props){
                     <div style={buttons}>
                         <Button variant='outlined' style={button} onClick={props.handleClose}>Cancel</Button>
                         <Button variant='outlined' onClick={submitOrder}>Add to Cart</Button>
+                    </div>
+                    <div>
+                        {failure ? <Alert severity="error">Please specify a quantity!</Alert>: null}
                     </div>
                 </div>
             </Modal>
