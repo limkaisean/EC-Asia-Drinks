@@ -9,6 +9,8 @@ import BEVERAGES from '../../../menu';
 const TITLE = "BEVERAGES";
 
 function Beverages() {
+
+    const [groups,setGroups] = React.useState([]);
     const [open, setOpen] = React.useState(false);
     const [popupInfo, setPopupInfo] = React.useState([]);
 
@@ -22,30 +24,31 @@ function Beverages() {
         setOpen(false);
     };
 
+    const getGroups = () => {
+        Object.keys(BEVERAGES).map((name) => {
+            if (!groups.includes(BEVERAGES[name].group)){
+                groups.push(BEVERAGES[name].group)
+            }
+        })
+    };
+
     return (
         <div>
             <div style={main}>
                 <Header title={TITLE}/>
-                <div style={beverages}>
-                    <h1 style={types}>Tea</h1>
-                    {
-                        Object.keys(BEVERAGES).map((name, _) => {
-                            if (BEVERAGES[name].group == 'Teas'){
-                                return <Beverage info={BEVERAGES[name]} customClick={handleOpen.bind(this, BEVERAGES[name])}/>
-                            } 
-                        })
-                    }
-                </div>
-                <div style={beverages}>
-                    <h1 style={types}>Coffee</h1>
-                    {
-                        Object.keys(BEVERAGES).map((name, _) => {   
-                            if (BEVERAGES[name].group == 'Coffees'){
-                                return <Beverage info={BEVERAGES[name]} open={open} customClick={handleOpen.bind(this, BEVERAGES[name])}/>
-                            } 
-                        })
-                    }
-                </div>
+                {getGroups()}
+                {groups.map((group) =>{
+                    return(
+                        <div style={beverages}>
+                            <h1 style={types}>{group}</h1>
+                            {Object.keys(BEVERAGES).map((name) => {
+                                if (BEVERAGES[name].group == group){
+                                    return <Beverage info={BEVERAGES[name]} customClick={handleOpen.bind(this, BEVERAGES[name])}/>
+                                } 
+                            })}
+                        </div>
+                    )
+                })}
             </div> 
             {open ? <PopUp info={popupInfo} open={open} handleClose={handleClose.bind(this)}/> : null}
         </div>
