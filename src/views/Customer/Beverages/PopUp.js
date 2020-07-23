@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { makeStyles } from '@material-ui/core/styles';
+ 
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
@@ -9,8 +8,49 @@ import Radio from '@material-ui/core/Radio';
 import Modal from '@material-ui/core/Modal';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
+
+import { addBeverage } from '../../../redux/actions';
+import { useDispatch } from 'react-redux';
 
 function PopUp(props){
+    const dispatch = useDispatch();
+    function submitOrder(){
+        const optionValues = {};
+        console.log(options)
+        Object.keys(options).map((key) => {
+            optionValues[key] = options[key];
+        })
+
+        if (comments !== ''){
+            optionValues['Comment'] = comments;
+        }
+
+        dispatch(addBeverage({ ...props.info, quantity: quantity, optionValues: optionValues}));
+        props.handleClose();
+    }
+    const [quantity, setQuantity] = React.useState('');
+    const [comments, setComments] = React.useState('');
+    const [options, setOptions] = React.useState({});
+
+    const onRadioChange = (event) => {
+        props.info.options.map((option) => {
+            if (event.target.name === option.name){
+                options[option.name] = event.target.value;
+            }
+        })
+    }
+
+    const onTextChange = (event) => {
+        setComments(event.target.value);
+    }
+
+    const onQuantityChange = (event) => {
+        setQuantity(event.target.value);
+    }
+
     return (
         <div>  
             <Modal open={props.open} onClose={props.handleClose} style={modal}>
@@ -20,31 +60,49 @@ function PopUp(props){
                     {
                         props.info.options.map((option) => {
                             return(
-                                <div>
-                                    <FormControl component="fieldset" style={radio}>
-                                        <FormLabel component="legend">{option.name}</FormLabel>
-                                        <RadioGroup aria-label={option.name}>
-                                            {
-                                                option.values.map((entry, i) =>{
-                                                    return (
-                                                        <FormControlLabel value={entry} control={<Radio />} label={entry} />
-                                                    )
-                                                })
-                                            }
-                                        </RadioGroup>
-                                    </FormControl>
-                                </div>
+                                <FormControl component="fieldset" style={radio}>
+                                    <FormLabel component="legend">{option.name}</FormLabel>
+                                    <RadioGroup aria-label={option.name} onChange={onRadioChange}>
+                                        {
+                                            option.values.map((entry, i) =>{
+                                                return (
+                                                    <FormControlLabel value={entry} name={option.name} control={<Radio />} label={entry}/>
+                                                )
+                                            })
+                                        }
+                                    </RadioGroup>
+                                </FormControl>
                             )
                         })
                     }
-                    <TextField
-                        placeholder="Additional comments"
-                        rows={5}
-                        rowsMax={10}
-                    />
+                    <div>
+                        <TextField
+                            placeholder="Additional comments"
+                            rows={5}
+                            rowsMax={10}
+                            onChange={onTextChange}
+                        />
+                    </div>
+                    <div>
+                    <FormControl style={select}>
+                        <InputLabel>Quantity</InputLabel>
+                        <Select value={quantity} onChange={onQuantityChange}>
+                            <MenuItem value=''>0</MenuItem>
+                            <MenuItem value={1}>1</MenuItem>
+                            <MenuItem value={2}>2</MenuItem>
+                            <MenuItem value={3}>3</MenuItem>
+                            <MenuItem value={4}>4</MenuItem>
+                            <MenuItem value={5}>5</MenuItem>
+                            <MenuItem value={6}>6</MenuItem>
+                            <MenuItem value={7}>7</MenuItem>
+                            <MenuItem value={8}>8</MenuItem>
+                            <MenuItem value={9}>9</MenuItem>
+                        </Select>
+                    </FormControl>
+                    </div>
                     <div style={buttons}>
                         <Button variant='outlined' style={button} onClick={props.handleClose}>Cancel</Button>
-                        <Button variant='outlined'>Add to Cart</Button>
+                        <Button variant='outlined' onClick={submitOrder}>Add to Cart</Button>
                     </div>
                 </div>
             </Modal>
@@ -56,7 +114,7 @@ const modal = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    overflow: 'hidden',
+    // overflow: 'auto',
     fontFamily: 'Lato',
 }
 
@@ -68,15 +126,22 @@ const popup = {
     width: '75%',
     outline: 'none',
     padding: '2.5% 5%',
+    overflowY: 'auto',
+    scrollPaddingTop: '200px',
     borderRadius: '20px',
-    overflow: 'scroll',
     fontFamily: 'Lato',
     fontSize: '20px'
 }
 
 const radio = {
     paddingBottom: '2.5%',
+    marginRight: '15%',
     fontFamily: 'Lato',
+}
+
+const select = {
+    marginTop: '2.5%',
+    minWidth: '120'
 }
 
 const buttons = {
