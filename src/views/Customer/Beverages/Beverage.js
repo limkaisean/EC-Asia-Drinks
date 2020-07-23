@@ -1,21 +1,6 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-
-import PopUp from './PopUp';
-
-import { addBeverage } from '../../../redux/actions';
 
 function Beverage(props) {
-    const dispatch = useDispatch();
-
-    function submitOrder(){
-        dispatch(addBeverage({ ...props.info, quantity: 1, optionValues: { // TODO: remove mock data
-            'Milk': 'Fresh Milk',
-            'Sweetener': 'Caramel',
-            'Sugar Level': '25%'
-        }}));
-    }
-
     return (
         <div>
             <div style={panel}>
