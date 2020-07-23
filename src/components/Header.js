@@ -15,7 +15,7 @@ const header = {
     height: '10%',
     width: '100%',
     margin: '0 auto',
-    backgroundColor: '#5CC2F2',
+    backgroundColor: '#27496D',
     color: '#F3F3F3',
     fontSize: '60px',
     fontFamily: 'Lato',

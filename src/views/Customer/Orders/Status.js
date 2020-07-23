@@ -84,7 +84,7 @@ const label = {
 
 const labelSelected = {
     fontSize: '20px',
-    color: '#0074E4',
+    color: '#915B4A',
     fontWeight: '700'
 };
 
@@ -92,7 +92,7 @@ const selectedCircle = {
     height: '100px',
     width: '100px',
     display: 'inline-block',
-    backgroundColor: '#0074E4',
+    backgroundColor: '#915B4A',
     borderRadius: '50%'
 };
 
@@ -100,7 +100,7 @@ const circle = {
     height: '70px',
     width: '70px',
     display: 'inline-block',
-    backgroundColor: '#CDBBA3',
+    backgroundColor: '#CD7D13',
     borderRadius: '50%',
 };
 
