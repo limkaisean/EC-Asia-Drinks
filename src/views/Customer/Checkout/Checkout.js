@@ -4,14 +4,14 @@ import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
-import { removeAllBeverages } from '../../../redux/actions';
+import { removeAllBeverages, addOrder } from '../../../redux/actions';
 
 import Header from '../../../components/Header';
 import Beverage from './Beverage';
 
 import BEVERAGES from '../../../menu';
 
-const TITLE = 'CHECKOUT';
+const TITLE = 'Checkout';
 const ORDER_SUCCESS_MSG = 'Your order has been successfully placed!';
 const ORDER_FAILED_MSG = 'We are unable to place your order, please try again or contact our staff';
 const EMPTY_CART_MESSAGE = 'Add beverages from the home page!';
@@ -79,15 +79,11 @@ function Checkout(props) {
                         EMPTY_CART_MESSAGE
                 }
             </div>
-            <br />
-            <br />
-            <br />
-            
-            <Button style={orderButton} onClick={() => handleOrder(props.websocket, byIds)}>
-                Order
-            </Button>
-            {/* to conditionally render: */}
-            {/* Add beverages from the home page! */}
+            <div style={footing}>
+                <Button style={orderButton} onClick={() => handleOrder(props.websocket, byIds)}>
+                    Order
+                </Button>
+            </div>
         </div> 
     )
 }
@@ -108,8 +104,15 @@ const heading = {
     fontSize: '47px'
 };
 
+const footing = {
+    backgroundColor: '#FFECD0',
+    paddingBottom: '40px',
+    textAlign: 'right'
+};
+
 const beverages = {
-    padding: '40px'
+    padding: '40px',
+    backgroundColor: '#FFECD0'
 };
 
 const clearContainer = {
@@ -119,7 +122,7 @@ const clearContainer = {
 
 const orderButton = {
     width: '170px',
-    height: '70px',
+    minHeight: '70px',
     marginLeft: 'auto',
     marginRight: '40px',
     fontFamily: 'Lato',

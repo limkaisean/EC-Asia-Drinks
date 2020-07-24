@@ -6,7 +6,7 @@ import PopUp from './PopUp';
 
 import BEVERAGES from '../../../menu';
 
-const TITLE = "BEVERAGES";
+const TITLE = "Beverages";
 
 function Beverages() {
 
