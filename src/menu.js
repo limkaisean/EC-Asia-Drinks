@@ -58,6 +58,141 @@ export default {
             }
         ]
     },
+    'Macchiato': {
+        name: 'Macchiato',
+        description: '',
+        group: 'ESPRESSO BEVERAGES',
+        options: [
+            {
+                name: 'Milk',
+                type: 'radio',
+                values: ['Without Milk', 'Fresh Milk', 'Low Fat Milk', 'Soymilk', 'Almond Milk', 'Hazelnut Milk'],
+            },
+            {
+                name: 'Sugar Level',
+                type: 'radio',
+                values: ['0%', '25%', '50%', '75%', '100%']
+            },
+            {
+                name: 'Sweetener',
+                type: 'radio',
+                values: ['Sugar Syrup', 'French Vanilla', 'Caramel', 'Hazelnut']
+            },
+            {
+                name: 'Hot/Cold',
+                type: 'radio',
+                values: ['Hot', 'Cold']
+            }
+        ]
+    },
+    'Cappucino': {
+        name: 'Cappucino',
+        description: '',
+        group: 'ESPRESSO BEVERAGES',
+        options: [
+            {
+                name: 'Milk',
+                type: 'radio',
+                values: ['Without Milk', 'Fresh Milk', 'Low Fat Milk', 'Soymilk', 'Almond Milk', 'Hazelnut Milk'],
+            },
+            {
+                name: 'Sugar Level',
+                type: 'radio',
+                values: ['0%', '25%', '50%', '75%', '100%']
+            },
+            {
+                name: 'Sweetener',
+                type: 'radio',
+                values: ['Sugar Syrup', 'French Vanilla', 'Caramel', 'Hazelnut']
+            },
+            {
+                name: 'Hot/Cold',
+                type: 'radio',
+                values: ['Hot', 'Cold']
+            }
+        ]
+    },
+    'Café Latte': {
+        name: 'Café Latte',
+        description: '',
+        group: 'ESPRESSO BEVERAGES',
+        options: [
+            {
+                name: 'Milk',
+                type: 'radio',
+                values: ['Without Milk', 'Fresh Milk', 'Low Fat Milk', 'Soymilk', 'Almond Milk', 'Hazelnut Milk'],
+            },
+            {
+                name: 'Sugar Level',
+                type: 'radio',
+                values: ['0%', '25%', '50%', '75%', '100%']
+            },
+            {
+                name: 'Sweetener',
+                type: 'radio',
+                values: ['Sugar Syrup', 'French Vanilla', 'Caramel', 'Hazelnut']
+            },
+            {
+                name: 'Hot/Cold',
+                type: 'radio',
+                values: ['Hot', 'Cold']
+            }
+        ]
+    },
+    'Flat White': {
+        name: 'Flat White',
+        description: '',
+        group: 'ESPRESSO BEVERAGES',
+        options: [
+            {
+                name: 'Milk',
+                type: 'radio',
+                values: ['Without Milk', 'Fresh Milk', 'Low Fat Milk', 'Soymilk', 'Almond Milk', 'Hazelnut Milk'],
+            },
+            {
+                name: 'Sugar Level',
+                type: 'radio',
+                values: ['0%', '25%', '50%', '75%', '100%']
+            },
+            {
+                name: 'Sweetener',
+                type: 'radio',
+                values: ['Sugar Syrup', 'French Vanilla', 'Caramel', 'Hazelnut']
+            },
+            {
+                name: 'Hot/Cold',
+                type: 'radio',
+                values: ['Hot', 'Cold']
+            }
+        ]
+    },
+    'Mocha': {
+        name: 'Mocha',
+        description: '',
+        group: 'ESPRESSO BEVERAGES',
+        options: [
+            {
+                name: 'Milk',
+                type: 'radio',
+                values: ['Without Milk', 'Fresh Milk', 'Low Fat Milk', 'Soymilk', 'Almond Milk', 'Hazelnut Milk'],
+            },
+            {
+                name: 'Sugar Level',
+                type: 'radio',
+                values: ['0%', '25%', '50%', '75%', '100%']
+            },
+            {
+                name: 'Sweetener',
+                type: 'radio',
+                values: ['Sugar Syrup', 'French Vanilla', 'Caramel', 'Hazelnut']
+            },
+            {
+                name: 'Hot/Cold',
+                type: 'radio',
+                values: ['Hot', 'Cold']
+            }
+        ]
+    },
     'Royal Darjeeling': {
         name: 'Royal Darjeeling',
         description: 'The king of India teas, this TWG Tea first flush black tea boasts an exquisite fragrance and a vibrant, sparkling taste that develops remarkable overtones of ripe apricots. An exquisite daytime tea.',
