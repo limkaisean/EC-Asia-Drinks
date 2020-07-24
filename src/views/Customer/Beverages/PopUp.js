@@ -95,7 +95,6 @@ function PopUp(props){
                     <FormControl style={select}>
                         <InputLabel>Quantity</InputLabel>
                         <Select value={quantity} onChange={onQuantityChange}>
-                            <MenuItem value=''>0</MenuItem>
                             <MenuItem value={1}>1</MenuItem>
                             <MenuItem value={2}>2</MenuItem>
                             <MenuItem value={3}>3</MenuItem>
@@ -133,7 +132,7 @@ const popup = {
     position: 'absolute',
     backgroundColor: 'white',
     margin: 'auto',
-    height: '70%',
+    height: 'auto',
     width: '75%',
     outline: 'none',
     padding: '2.5% 5%',
