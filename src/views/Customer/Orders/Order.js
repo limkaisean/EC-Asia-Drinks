@@ -4,19 +4,14 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import Switch from '@material-ui/core/Switch';
 
 import Status from './Status';
 import Beverage from './Beverage';
 
 function Order(props) {
+    const { id,  status, meetingRoom, time, beverages, ...other } = props.info;
+
     const [open, setOpen] = React.useState(false);
     const [fullWidth, setFullWidth] = React.useState(true);
     const [maxWidth, setMaxWidth] = React.useState('sm');
@@ -28,24 +23,16 @@ function Order(props) {
     const handleClose = () => {
       setOpen(false);
     };
-  
-    const handleMaxWidthChange = (event) => {
-      setMaxWidth(event.target.value);
-    };
-  
-    const handleFullWidthChange = (event) => {
-      setFullWidth(event.target.checked);
-    };
 
     return (
         <div>
             <div style={panel} onClick={handleClickOpen}>
-                <div style={id}>
-                    #<span style={bold}>{props.id}</span>
+                <div style={idStyle}>
+                    #<span style={bold}>{id}</span>
                 </div>
-                <Status current={props.status} />
-                <div style={time}>
-                    Ordered at <span style={bold}>{props.time}</span>
+                <Status current={status} />
+                <div style={timeStyle}>
+                    Ordered at <span style={bold}>{time}</span>
                 </div>
             </div>
             <Dialog
@@ -56,16 +43,16 @@ function Order(props) {
                 aria-labelledby="max-width-dialog-title"
             >   
                 <div style={popupHeader}>
-                    <DialogTitle id="max-width-dialog-title">#<span style={bold}>{props.id}</span></DialogTitle>
+                    <DialogTitle id="max-width-dialog-title">#<span style={bold}>{id}</span></DialogTitle>
                 </div>
                 <div style={popupBody}> 
                     <DialogContent>
-                        {props.drinks.map((drink, i) => {
+                        {beverages.map((drink, i) => {
                             return <Beverage key={drink.name} info={drink} />
                         })}
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={handleClose} color="#27496D">
+                        <Button style={closeButton} onClick={handleClose}>
                             Close
                         </Button>
                     </DialogActions>
@@ -92,7 +79,6 @@ const panel = {
     color: '#915B4A'
 };
 
-
 const popupHeader = {
     backgroundColor: '#27496D',
     color: '#f3f3f3'
@@ -100,6 +86,10 @@ const popupHeader = {
 
 const popupBody = {
     backgroundColor: '#FFECD0'
+};
+
+const closeButton = {
+    color: "#27496D"
 };
 
 const bold = {
@@ -111,12 +101,12 @@ const title = {
     fontSize: '35px'
 };
 
-const id = {
+const idStyle = {
     padding: '15px',
     textAlign: 'left',
 };
 
-const time = {
+const timeStyle = {
     padding: '15px',
     textAlign: 'left',
 };

@@ -16,8 +16,8 @@ const ORDER_SUCCESS_MSG = 'Your order has been successfully placed!';
 const ORDER_FAILED_MSG = 'We are unable to place your order, please try again or contact our staff';
 const EMPTY_CART_MESSAGE = 'Add beverages from the home page!';
 
-function handleOrder(websocket, byIds) {
-    if (Object.keys(byIds).length > 0) websocket.emit('order_request', byIds);
+function handleOrder(websocket, meetingRoom, byIds) {
+    if (Object.keys(byIds).length > 0) websocket.emit('order_request', {meetingRoom: meetingRoom, beverages: Object.values(byIds)});
 }
 
 function Alert(props) {
@@ -26,6 +26,11 @@ function Alert(props) {
 
 function Checkout(props) {
     const dispatch = useDispatch();
+
+    const meetingRoom = useSelector(state => {
+        return state.meetingRoom.value;
+    });
+
     const byIds = useSelector(state => {
         return state.cart.beverages;
     });
@@ -61,9 +66,6 @@ function Checkout(props) {
             </Snackbar>
 
             <Header title={TITLE} />
-            <div style={heading}>
-                Beverages
-            </div>
             <div style={clearContainer}>
                 <Button style={clearButton} onClick={() => dispatch(removeAllBeverages())}>
                     Clear All
@@ -74,13 +76,13 @@ function Checkout(props) {
                     Object.keys(byIds).length > 0 ? 
                         Object.keys(byIds).map((id, i) => {
                             const beverageName = byIds[id].name;
-                            return <Beverage key={id} info={{ ...BEVERAGES[beverageName], ...byIds[id], id}} />
+                            return <Beverage key={i} info={{ ...BEVERAGES[beverageName], ...byIds[id], id}} />
                         }) :
                         EMPTY_CART_MESSAGE
                 }
             </div>
             <div style={footing}>
-                <Button style={orderButton} onClick={() => handleOrder(props.websocket, byIds)}>
+                <Button style={orderButton} onClick={() => handleOrder(props.websocket, meetingRoom, byIds)}>
                     Order
                 </Button>
             </div>

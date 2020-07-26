@@ -14,7 +14,7 @@ function Beverages() {
             <div style={beverages}>
                 {
                     Object.keys(BEVERAGES).map((name, _) => {
-                        return <Beverage info={BEVERAGES[name]} />
+                        return <Beverage key={name} info={BEVERAGES[name]} />
                     })
                 }
             </div>

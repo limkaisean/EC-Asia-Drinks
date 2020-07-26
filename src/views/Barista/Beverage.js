@@ -2,8 +2,6 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import Button from '@material-ui/core/Button';
 
-import { incrementBeverage, reduceBeverage, removeBeverage } from '../../../redux/actions';
-
 function Beverage(props) {
     const dispatch = useDispatch();
 
@@ -24,18 +22,9 @@ function Beverage(props) {
                 </div>
             </div>
             <div style={buttonContainer}>
-                <button style={quantityButton} onClick={() => dispatch(incrementBeverage({ id: props.info.id }))}>
-                    +
-                </button>
                 <div style={quantity}>
                     {props.info.quantity}
                 </div>
-                <button style={quantityButton} onClick={() => dispatch(reduceBeverage({ id: props.info.id }))}>
-                    -
-                </button>
-                <Button style={deleteButton} onClick={() => dispatch(removeBeverage({ id: props.info.id }))}>
-                    &#128465;
-                </Button>
             </div>
         </div>
     );
@@ -46,9 +35,7 @@ function Beverage(props) {
 const panel = {
     margin: '1em auto',
     paddingBottom: '20px',
-    minHeight: '170px',
     height: '10%',
-    minWidth: '700px',
     width: '100%',
     backgroundColor: '#f6c667',
     borderRadius: '12px',
