@@ -4,49 +4,50 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import Switch from '@material-ui/core/Switch';
 
 import Status from './Status';
 import Beverage from './Beverage';
 
 function Order(props) {
+    const { id,  status, meetingRoom, time, beverages, ...other } = props.info;
+
     const [open, setOpen] = React.useState(false);
     const [fullWidth, setFullWidth] = React.useState(true);
     const [maxWidth, setMaxWidth] = React.useState('sm');
+
+    const [isHovering, setIsHovering] = useState(false);
   
-    const handleClickOpen = () => {
+    const handleOpen = () => {
       setOpen(true);
     };
   
     const handleClose = () => {
       setOpen(false);
     };
-  
-    const handleMaxWidthChange = (event) => {
-      setMaxWidth(event.target.value);
+
+    const onMouseEnter = () => {
+        setIsHovering(true);
     };
-  
-    const handleFullWidthChange = (event) => {
-      setFullWidth(event.target.checked);
+
+    const onMouseLeave = () => {
+        setIsHovering(false);
     };
 
     return (
-        <div>
-            <div style={panel} onClick={handleClickOpen}>
-                <div style={id}>
-                    #<span style={bold}>{props.id}</span>
+        <div onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave} > 
+            <div style={isHovering ? panelHover : panel} onClick={handleOpen}>
+                <div style={fixedInfo}>
+                    <div style={idStyle}>
+                        #<span style={bold}>{id}</span>
+                    </div>
+                    <div style={timeStyle}>
+                        Ordered at <span style={bold}>{time}</span>
+                    </div>
                 </div>
-                <Status current={props.status} />
-                <div style={time}>
-                    Ordered at <span style={bold}>{props.time}</span>
-                </div>
+                <Status current={status} />
+                <span></span>
             </div>
             <Dialog
                 fullWidth={fullWidth}
@@ -56,16 +57,16 @@ function Order(props) {
                 aria-labelledby="max-width-dialog-title"
             >   
                 <div style={popupHeader}>
-                    <DialogTitle id="max-width-dialog-title">#<span style={bold}>{props.id}</span></DialogTitle>
+                    <DialogTitle id="max-width-dialog-title">#<span style={bold}>{id}</span></DialogTitle>
                 </div>
                 <div style={popupBody}> 
                     <DialogContent>
-                        {props.drinks.map((drink, i) => {
+                        {beverages.map((drink, i) => {
                             return <Beverage key={drink.name} info={drink} />
                         })}
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={handleClose} color="#27496D">
+                        <Button style={closeButton} onClick={handleClose}>
                             Close
                         </Button>
                     </DialogActions>
@@ -79,19 +80,34 @@ function Order(props) {
 /* CSS */
 
 const panel = {
-    minHeight: '200px',
-    height: '10%',
+    minHeight: '150px',
+    height: '7em',
     minWidth: '700px',
     width: '90%',
     margin: '2% auto',
     backgroundColor: '#F0CB94',
     borderRadius: '2px',
-    fontSize: '42px',
+    fontSize: '30px',
     fontFamily: 'Lato',
     fontWeight: '300',
-    color: '#915B4A'
+    color: '#915B4A',
+    boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+    transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
 };
 
+const panelHover = {
+    ...panel,
+    boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)'
+};
+
+const fixedInfo = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'space-between',
+};
 
 const popupHeader = {
     backgroundColor: '#27496D',
@@ -102,21 +118,20 @@ const popupBody = {
     backgroundColor: '#FFECD0'
 };
 
+const closeButton = {
+    color: "#27496D"
+};
+
 const bold = {
     fontWeight: '700'
 };
 
-const title = {
-    ...bold,
-    fontSize: '35px'
-};
-
-const id = {
+const idStyle = {
     padding: '15px',
     textAlign: 'left',
 };
 
-const time = {
+const timeStyle = {
     padding: '15px',
     textAlign: 'left',
 };

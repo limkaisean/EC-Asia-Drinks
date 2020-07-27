@@ -1,4 +1,4 @@
-import { ADD_BEVERAGE, INCREMENT_BEVERAGE, REDUCE_BEVERAGE, REMOVE_BEVERAGE, REMOVE_ALL_BEVERAGES } from './actionTypes';
+import { ADD_BEVERAGE, INCREMENT_BEVERAGE, REDUCE_BEVERAGE, REMOVE_BEVERAGE, REMOVE_ALL_BEVERAGES, SET_MEETING_ROOM } from './actionTypes';
 
 /*
  * action creators
@@ -21,4 +21,8 @@ export function removeBeverage(id) {
 
 export function removeAllBeverages() {
     return { type: REMOVE_ALL_BEVERAGES }
+}
+
+export function setMeetingRoom(newRoom) {
+    return { type: SET_MEETING_ROOM, payload: newRoom }
 }

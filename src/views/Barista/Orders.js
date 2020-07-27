@@ -1,38 +1,38 @@
 import React, { useState, useEffect } from 'react';
+import _ from 'underscore';
 
+import Header from '../../components/Header';
 import Order from './Order';
+import Statistics from './Statistics';
 
-
-const Status = {
-    received: 'received',
-    preparing: 'preparing',
-    serving: 'serving',
-    completed: 'completed'
-};
+const TITLE = 'Orders';
 
 function Orders(props) {
-    const [orders, setOrders] = useState([]);
-
+    const [orders, setOrders] = useState({});
+   
     useEffect(() => {
         if (!props.websocket) return;
 
-        // props.websocket.on('receive_orders', data => {
-        //     setOrders(data);
-        // });
+        props.websocket.on('barista_orders_response', orders => {
+            setOrders(orders);
+        });
 
-        // props.websocket.emit('request_orders', {});
-        // console.log('emitted');
+        props.websocket.on('update_orders', data => {
+            setOrders(data.orders);
+        });
+
+        props.websocket.emit('barista_orders_request', {});
+
     }, [props.websocket]);
 
     return (
-        <div className="OrdersCustomers" style={main}>
-            <div style={header}>
-                <span margintop='50px'>Orders</span>
-            </div>
-            <div style={ordersList}>
+        <div style={main}>
+            <Header title={TITLE} isBarista={true} />
+            <Statistics orders={orders} />
+            <div style={ordersList} >
                 {
-                    orders.map((obj, i) => {
-                        return <Order key={obj.id} id={obj.id} status={obj.status} time={obj.time} />
+                    Object.keys(orders).map((id, i) => {
+                        return <Order key={i} websocket={props.websocket} info={orders[id]} />
                     })
                 }
             </div>
@@ -51,22 +51,10 @@ const main = {
     flexDirection: 'column'
 };
 
-const header = {
-    minHeight: '150px',
-    height: '10%',
-    width: '100%',
-    margin: '0 auto',
-    backgroundColor: '#5CC2F2',
-    color: '#F3F3F3',
-    fontSize: '70px',
-    fontFamily: 'Lato',
-    fontWeight: '300'
-};
-
 const ordersList = {
-    height: '100%',
+    height: '90%',
     width: '100%',
-    backgroundColor: '#F3F3F3',
+    backgroundColor: '#FFECD0',
 };
 
 export default Orders;
