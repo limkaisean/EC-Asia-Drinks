@@ -19,13 +19,13 @@ function OrderPopup(props) {
             <div style={header}>
                 <DialogContent id="max-width-dialog-title">
                     <div style={idStyle}>#<span style={bold}>{info.id}</span></div>
-                    <div style={middleInfo}>
-                        <div style={meetingRoomStyle}>Meeting Room <span style={bold}>{info.meetingRoom}</span></div>
-                        <Status websocket={props.websocket} info={info} /> 
-                    </div>
                     <div style={timeStyle}>
                         Ordered at <span style={bold}>{info.time}</span>
                     </div> 
+                    <div style={bottomInfo}>
+                        <div style={meetingRoomStyle}>Meeting Room <span style={bold}>{info.meetingRoom}</span></div>
+                        <Status websocket={props.websocket} handleOrderClose={props.handleClose} info={info} /> 
+                    </div>
                 </DialogContent>
             </div>
             <div style={body}> 
@@ -56,7 +56,7 @@ const body = {
     backgroundColor: '#FFECD0'
 };
 
-const middleInfo = {
+const bottomInfo = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -70,12 +70,12 @@ const idStyle = {
 };
 
 const meetingRoomStyle = {
-    padding: '2px',
-    fontSize: '34px'
+    fontSize: '34px',
+    paddingTop: '10px'
 };
 
 const timeStyle = {
-    padding: '2px',
+    padding: '10px 2px',
 };
 
 const closeButton = {

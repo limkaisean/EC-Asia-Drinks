@@ -14,7 +14,7 @@ import BEVERAGES from '../../../menu';
 const TITLE = 'Checkout';
 const ORDER_SUCCESS_MSG = 'Your order has been successfully placed!';
 const ORDER_FAILED_MSG = 'We are unable to place your order, please try again or contact our staff';
-const EMPTY_CART_MESSAGE = 'Add beverages from the home page!';
+const EMPTY_CART_MESSAGE = 'Add beverages from the menu!';
 
 function handleOrder(websocket, meetingRoom, byIds) {
     if (Object.keys(byIds).length > 0) websocket.emit('order_request', {meetingRoom: meetingRoom, beverages: Object.values(byIds)});
@@ -98,14 +98,6 @@ const main = {
     flexDirection: 'column'
 };
 
-const heading = {
-    paddingBottom: '30px',
-    marginTop: '20px',
-    marginLeft: '40px',
-    textAlign: 'left',
-    fontSize: '47px'
-};
-
 const footing = {
     backgroundColor: '#FFECD0',
     paddingBottom: '40px',
@@ -114,7 +106,9 @@ const footing = {
 
 const beverages = {
     padding: '40px',
-    backgroundColor: '#FFECD0'
+    backgroundColor: '#FFECD0',
+    fontFamily: 'Lato',
+    fontSize: '32px'
 };
 
 const clearContainer = {

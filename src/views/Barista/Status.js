@@ -52,6 +52,7 @@ function Status(props) {
         props.websocket.emit('update_status_request', toSend); 
         setValue(3);
         handleCompletedClose();
+        props.handleOrderClose();
     };
 
     const handleChange = (event, newValue) => {
@@ -118,7 +119,7 @@ const bar = {
 };
 
 const tab = {
-    backgroundColor: '#FFECD0',
+    backgroundColor: '#F3F3F3',
     border: '1px solid #dfd3c3',
     color: '#ad9d9d',
     fontFamily: 'Lato',
