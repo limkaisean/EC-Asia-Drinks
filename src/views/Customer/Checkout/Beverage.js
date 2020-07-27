@@ -75,7 +75,7 @@ const options = {
 
 const optionValue = {
     fontSize: '22px',
-    color: 'orange',
+    color: '#eb8242',
     fontWeight: '900'
 };
 
@@ -86,10 +86,9 @@ const buttonContainer = {
 };
 
 const quantity = {
-    color: '#222831',
+    color: '#eb8242',
     fontSize: '48px',
     fontWeight: '900',
-    color: 'orange',
     borderRadius: '20%',
     border: 'none',
     marginRight: '30px'

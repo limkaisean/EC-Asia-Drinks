@@ -17,15 +17,16 @@ function Orders(props) {
         if (!props.websocket) return;
 
         props.websocket.on('confirmed_orders_response', orders => {
+            console.log(orders);
             setOrders(orders);
         });
 
         props.websocket.on('update_status_relay', data => {
             setOrders({});
         });
-
+        
         props.websocket.emit('confirmed_orders_request', { meetingRoom: meetingRoom });
-    }, [props.websocket]);
+    }, [props.websocket, meetingRoom]);
 
     return (
         <div className="OrdersCustomers" style={main}>
@@ -44,16 +45,14 @@ function Orders(props) {
 /* CSS */
 
 const main = {
-    height: '100%',
+    height: '100vh',
     width: '100%',
-    margin: '0',
-    position: 'absolute',
     display: 'flex',
     flexDirection: 'column'
 };
 
 const ordersList = {
-    height: '100%',
+    height: '90%',
     width: '100%',
     backgroundColor: '#FFECD0',
 };

@@ -15,8 +15,10 @@ function Order(props) {
     const [open, setOpen] = React.useState(false);
     const [fullWidth, setFullWidth] = React.useState(true);
     const [maxWidth, setMaxWidth] = React.useState('sm');
+
+    const [isHovering, setIsHovering] = useState(false);
   
-    const handleClickOpen = () => {
+    const handleOpen = () => {
       setOpen(true);
     };
   
@@ -24,16 +26,28 @@ function Order(props) {
       setOpen(false);
     };
 
+    const onMouseEnter = () => {
+        setIsHovering(true);
+    };
+
+    const onMouseLeave = () => {
+        setIsHovering(false);
+    };
+
     return (
-        <div>
-            <div style={panel} onClick={handleClickOpen}>
-                <div style={idStyle}>
-                    #<span style={bold}>{id}</span>
+        <div onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave} > 
+            <div style={isHovering ? panelHover : panel} onClick={handleOpen}>
+                <div style={fixedInfo}>
+                    <div style={idStyle}>
+                        #<span style={bold}>{id}</span>
+                    </div>
+                    <div style={timeStyle}>
+                        Ordered at <span style={bold}>{time}</span>
+                    </div>
                 </div>
                 <Status current={status} />
-                <div style={timeStyle}>
-                    Ordered at <span style={bold}>{time}</span>
-                </div>
+                <span></span>
             </div>
             <Dialog
                 fullWidth={fullWidth}
@@ -66,17 +80,33 @@ function Order(props) {
 /* CSS */
 
 const panel = {
-    minHeight: '200px',
-    height: '10%',
+    minHeight: '150px',
+    height: '7em',
     minWidth: '700px',
     width: '90%',
     margin: '2% auto',
     backgroundColor: '#F0CB94',
     borderRadius: '2px',
-    fontSize: '42px',
+    fontSize: '30px',
     fontFamily: 'Lato',
     fontWeight: '300',
-    color: '#915B4A'
+    color: '#915B4A',
+    boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+    transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+};
+
+const panelHover = {
+    ...panel,
+    boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)'
+};
+
+const fixedInfo = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'space-between',
 };
 
 const popupHeader = {
@@ -94,11 +124,6 @@ const closeButton = {
 
 const bold = {
     fontWeight: '700'
-};
-
-const title = {
-    ...bold,
-    fontSize: '35px'
 };
 
 const idStyle = {
