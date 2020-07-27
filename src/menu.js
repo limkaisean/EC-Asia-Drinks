@@ -328,7 +328,7 @@ export default {
     'Yuzu Lemon': {
         name: 'Yuzu Lemon',
         description: '',
-        group: 'TWG TEA',
+        group: 'TEA',
         options: [
             {
                 name: 'Hot/Cold',
@@ -340,7 +340,7 @@ export default {
     'Masala Chai': {
         name: 'Masala Chai',
         description: '',
-        group: 'TWG TEA',
+        group: 'TEA',
         options: [
             {
                 name: 'Hot/Cold',
@@ -352,7 +352,7 @@ export default {
     'Lemongrass Pandan': {
         name: 'Lemongrass Pandan',
         description: '',
-        group: 'TWG TEA',
+        group: 'TEA',
         options: [
             {
                 name: 'Hot/Cold',
