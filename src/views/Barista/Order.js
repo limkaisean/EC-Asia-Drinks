@@ -6,7 +6,10 @@ import OrderPopup from './OrderPopup';
 
 function Order(props) {
     const [info, setInfo] = useState(props.info);
+<<<<<<< HEAD
     const [isHovering, setIsHovering] = useState(false);
+=======
+>>>>>>> master
 
     useEffect(() => {
         setInfo(props.info);
@@ -26,6 +29,7 @@ function Order(props) {
     };
 
     return (
+<<<<<<< HEAD
         <div onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)} >
             <div style={isHovering ? panelHover : panel} onClick={handleClickOpen}>
@@ -42,6 +46,23 @@ function Order(props) {
                 </div>
                 <div style={statusStyle}>
                     <span style={shadow}>{info.status}</span>
+=======
+        <div>
+            <div style={panel} onClick={handleClickOpen}>
+                <div style={idStyle}>
+                    #<span style={bold}>{info.id}</span>
+                </div>
+                <div style={middleInfo}>
+                    <div style={meetingRoomStyle}>
+                        Meeting Room <span style={bold}>{info.meetingRoom}</span>
+                    </div>
+                    <div style={rightInfo}>
+                        {info.status}
+                    </div>
+                </div>
+                <div style={timeStyle}>
+                    Ordered at <span style={bold}>{info.time}</span>
+>>>>>>> master
                 </div>
             </div>
             <Dialog
@@ -67,6 +88,7 @@ const panel = {
     margin: '2% auto',
     backgroundColor: '#F0CB94',
     borderRadius: '2px',
+<<<<<<< HEAD
     fontFamily: 'Lato',
     fontSize: '30px',
     fontWeight: '300',
@@ -108,19 +130,62 @@ const meetingRoomStyle = {
     textAlign: 'left',
 };
 
+=======
+    fontSize: '36px',
+    fontFamily: 'Lato',
+    fontWeight: '300',
+    color: '#915B4A'
+};
+
+const middleInfo = {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+};
+
+const rightInfo = {
+    padding: '20px',
+    paddingRight: '50px',
+    fontSize: '48px',
+    color: '#0074E4',
+    fontWeight: '700',
+}
+
+const meetingRoomStyle = {
+    padding: '20px',
+    textAlign: 'left',
+};
+
+
+>>>>>>> master
 const bold = {
     fontWeight: '700'
 };
 
+<<<<<<< HEAD
 const idStyle = {
     padding: '10px 20px',
     paddingBottom: '10px',
+=======
+const title = {
+    ...bold,
+    fontSize: '35px'
+};
+
+const idStyle = {
+    padding: '20px',
+>>>>>>> master
     textAlign: 'left',
 };
 
 const timeStyle = {
+<<<<<<< HEAD
     padding: '10px 20px',
     paddingBottom: '10px',
+=======
+    padding: '20px',
+>>>>>>> master
     textAlign: 'left',
 };
 

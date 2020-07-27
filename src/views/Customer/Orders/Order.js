@@ -25,6 +25,7 @@ function Order(props) {
     const handleClose = () => {
       setOpen(false);
     };
+<<<<<<< HEAD
 
     const onMouseEnter = () => {
         setIsHovering(true);
@@ -45,6 +46,18 @@ function Order(props) {
                     <div style={timeStyle}>
                         Ordered at <span style={bold}>{time}</span>
                     </div>
+=======
+
+    return (
+        <div>
+            <div style={panel} onClick={handleClickOpen}>
+                <div style={idStyle}>
+                    #<span style={bold}>{id}</span>
+                </div>
+                <Status current={status} />
+                <div style={timeStyle}>
+                    Ordered at <span style={bold}>{time}</span>
+>>>>>>> master
                 </div>
                 <Status current={status} />
                 <span></span>
@@ -98,6 +111,7 @@ const panel = {
     justifyContent: 'space-between',
 };
 
+<<<<<<< HEAD
 const panelHover = {
     ...panel,
     boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)'
@@ -109,6 +123,8 @@ const fixedInfo = {
     alignItems: 'space-between',
 };
 
+=======
+>>>>>>> master
 const popupHeader = {
     backgroundColor: '#27496D',
     color: '#f3f3f3'
@@ -120,6 +136,13 @@ const popupBody = {
 
 const closeButton = {
     color: "#27496D"
+<<<<<<< HEAD
+=======
+};
+
+const bold = {
+    fontWeight: '700'
+>>>>>>> master
 };
 
 const bold = {

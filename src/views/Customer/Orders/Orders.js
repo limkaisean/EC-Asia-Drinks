@@ -17,16 +17,25 @@ function Orders(props) {
         if (!props.websocket) return;
 
         props.websocket.on('confirmed_orders_response', orders => {
+<<<<<<< HEAD
             console.log(orders);
+=======
+>>>>>>> master
             setOrders(orders);
         });
 
         props.websocket.on('update_status_relay', data => {
             setOrders({});
         });
+<<<<<<< HEAD
         
         props.websocket.emit('confirmed_orders_request', { meetingRoom: meetingRoom });
     }, [props.websocket, meetingRoom]);
+=======
+
+        props.websocket.emit('confirmed_orders_request', { meetingRoom: meetingRoom });
+    }, [props.websocket]);
+>>>>>>> master
 
     return (
         <div className="OrdersCustomers" style={main}>

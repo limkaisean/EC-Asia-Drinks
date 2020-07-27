@@ -9,7 +9,10 @@ const TITLE = 'Orders';
 
 function Orders(props) {
     const [orders, setOrders] = useState({});
+<<<<<<< HEAD
    
+=======
+>>>>>>> master
 
     useEffect(() => {
         if (!props.websocket) return;
@@ -18,6 +21,15 @@ function Orders(props) {
             setOrders(orders);
         });
 
+<<<<<<< HEAD
+=======
+        props.websocket.on('barista_order_relay', order => {
+            // const newOrders = _.cloneDeep(orders);
+            // newOrders[order.id] = order;
+            setOrders({});
+        });
+
+>>>>>>> master
         props.websocket.on('update_orders', data => {
             setOrders(data.orders);
         });
@@ -28,7 +40,11 @@ function Orders(props) {
 
     return (
         <div style={main}>
+<<<<<<< HEAD
             <Header title={TITLE} isBarista={true} />
+=======
+            <Header title={TITLE} />
+>>>>>>> master
             <Statistics orders={orders} />
             <div style={ordersList} >
                 {
