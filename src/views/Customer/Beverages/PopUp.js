@@ -20,7 +20,6 @@ function PopUp(props){
     const dispatch = useDispatch();
     function submitOrder(){
         const optionValues = {};
-        console.log(options)
         Object.keys(options).map((key) => {
             optionValues[key] = options[key];
         })
