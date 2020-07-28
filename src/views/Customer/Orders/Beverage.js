@@ -15,7 +15,7 @@ function Beverage(props) {
                         Object.keys(props.info.optionValues).map((option, _) => {
                             return (
                                 <div>
-                                    <span style={optionValue}>{props.info.optionValues[option]}</span>
+                                    <span style={optionValue}><span>{option}: </span>{props.info.optionValues[option]}</span>
                                 </div>
                             );
                         })
