@@ -123,7 +123,7 @@ const modal = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    // overflow: 'auto',
+    overflow: 'auto',
     fontFamily: 'Lato',
 }
 
@@ -135,7 +135,7 @@ const popup = {
     width: '75%',
     outline: 'none',
     padding: '2.5% 5%',
-    overflowY: 'auto',
+    // overflowY: 'auto',
     scrollPaddingTop: '200px',
     borderRadius: '20px',
     fontFamily: 'Lato',
