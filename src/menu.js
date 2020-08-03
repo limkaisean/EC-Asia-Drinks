@@ -325,9 +325,9 @@ export default {
             }
         ]
     },
-    'Yuzu Lemon': {
-        name: 'Yuzu Lemon',
-        description: '',
+    'Yuzu with Forest Honey': {
+        name: 'Yuzu with Forest Honey',
+        description: 'iLite Yuzu with Forest Honey fulfils your daily Vitamin C intake with just one sachet! Made from using only the finest Yuzu, our citrusy yet lower in sugar beverage will perk you up at any moments of your day.',
         group: 'TEA',
         options: [
             {
@@ -339,7 +339,7 @@ export default {
     },
     'Masala Chai': {
         name: 'Masala Chai',
-        description: '',
+        description: 'iLite Masala Chai is made from natural premium spices specially curated to help strengthen and boost immunity! Some of our spices include Ginger, Cinnamon, Cloves, and Cardamom, and these inherently contain beneficial properties that can be enjoyed for the young and old.',
         group: 'TEA',
         options: [
             {
@@ -351,7 +351,7 @@ export default {
     },
     'Lemongrass Pandan': {
         name: 'Lemongrass Pandan',
-        description: '',
+        description: 'iLite Lemongrass Pandan is made from real lemongrass without any preservatives! Sometimes recognised as an anti-inflammatory superfood, it is used as a remedy for stress and exhaustion reliefs.',
         group: 'TEA',
         options: [
             {
