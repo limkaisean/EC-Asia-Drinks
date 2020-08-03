@@ -18,7 +18,7 @@ function Beverage(props) {
                 <div style={options}>
                     {
                         Object.keys(props.info.optionValues).map((option, i) => {
-                            return <div key={i}><span>{option}:</span> <span style={optionValue}>{props.info.optionValues[option]}</span></div>
+                            return <div key={i}><span>{option}: </span><span style={optionValue}>{props.info.optionValues[option]}</span></div>
                         })
                     }
                 </div>

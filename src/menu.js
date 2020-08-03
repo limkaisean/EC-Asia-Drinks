@@ -2,7 +2,7 @@ export default {
     'Espresso': {
         name: 'Espresso',
         description: '',
-        group: 'ESPRESSO BEVERAGES',
+        group: 'COFFEE',
         options: [
             {
                 name: 'Milk',
@@ -34,7 +34,7 @@ export default {
     'Americano': {
         name: 'Americano',
         description: '',
-        group: 'ESPRESSO BEVERAGES',
+        group: 'COFFEE',
         options: [
             {
                 name: 'Milk',
@@ -61,7 +61,7 @@ export default {
     'Macchiato': {
         name: 'Macchiato',
         description: '',
-        group: 'ESPRESSO BEVERAGES',
+        group: 'COFFEE',
         options: [
             {
                 name: 'Milk',
@@ -88,7 +88,7 @@ export default {
     'Cappucino': {
         name: 'Cappucino',
         description: '',
-        group: 'ESPRESSO BEVERAGES',
+        group: 'COFFEE',
         options: [
             {
                 name: 'Milk',
@@ -115,7 +115,7 @@ export default {
     'Café Latte': {
         name: 'Café Latte',
         description: '',
-        group: 'ESPRESSO BEVERAGES',
+        group: 'COFFEE',
         options: [
             {
                 name: 'Milk',
@@ -142,7 +142,7 @@ export default {
     'Flat White': {
         name: 'Flat White',
         description: '',
-        group: 'ESPRESSO BEVERAGES',
+        group: 'COFFEE',
         options: [
             {
                 name: 'Milk',
@@ -169,7 +169,7 @@ export default {
     'Mocha': {
         name: 'Mocha',
         description: '',
-        group: 'ESPRESSO BEVERAGES',
+        group: 'COFFEE',
         options: [
             {
                 name: 'Milk',

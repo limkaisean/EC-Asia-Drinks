@@ -84,7 +84,7 @@ const label = {
 
 const labelSelected = {
     fontSize: '20px',
-    backgroundColor: '#eb8242',
+    backgroundColor: '#0074E4',
     color: '#F3F3F3',
     marginBottom: '17px',
     boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
@@ -95,7 +95,7 @@ const circleSelected = {
     height: '100px',
     width: '100px',
     display: 'inline-block',
-    backgroundColor: '#eb8242',
+    backgroundColor: '#0074E4',
     borderRadius: '50%',
     boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
     transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)'
