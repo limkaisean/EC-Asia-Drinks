@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     }
 });
 
-const meetingRooms = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+const meetingRooms = ['Suite 1', 'Suite 2', 'Suite 3', 'Suite 4', 'Suite 5', 'Innovation Factory', 'Suite A', 'Suite B', 'Suite C', 'Suite D', 'Suite E'];
 
 function Header(props) {
     const dispatch = useDispatch();
