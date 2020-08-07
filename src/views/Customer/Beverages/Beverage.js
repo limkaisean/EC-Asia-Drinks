@@ -32,10 +32,10 @@ function Beverage(props) {
 const panel = {
     minHeight: '200px',
     height: '10%',
-    minWidth: '700px',
+    minWidth: '200px',
     width: '100%',
     margin: '1em auto',
-    backgroundColor: '#D9B48FFF',
+    backgroundColor: '#ddbfa1',
     borderRadius: '2px',
     fontFamily: 'Helvetica',
     display: 'flex',

@@ -119,13 +119,15 @@ const clearContainer = {
 };
 
 const orderButton = {
-    width: '170px',
-    minHeight: '70px',
+    width: '150px',
+    minHeight: '60px',
     marginLeft: 'auto',
     marginRight: '40px',
     fontFamily: 'Helvetica',
     fontSize: '23px',
-    backgroundColor: 'orange'
+    backgroundColor: '#ddbfa1',
+    border: '3px solid #6E4C1EFF',
+    textTransform: 'none' 
 };
 
 const clearButton = {
@@ -135,6 +137,7 @@ const clearButton = {
     fontSize: '18px',
     border: 'none',
     borderRadius: '8px',
+    textTransform: 'none'
 };
 
 
