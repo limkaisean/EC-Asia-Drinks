@@ -114,14 +114,14 @@ function Header(props) {
 /* CSS */
 
 const header = {
-    minHeight: '170px',
+    minHeight: '150px',
     height: '10%',
     minWidth: '375px',
     width: '100%',
-    backgroundColor: '#27496D',
+    backgroundColor: '#669DB3FF',
     color: '#F3F3F3',
-    fontSize: '60px',
-    fontFamily: 'Lato',
+    fontSize: '40px',
+    fontFamily: 'Helvetica',
     fontWeight: '300',
     display: 'flex',
     flexDirection: 'row',
@@ -165,7 +165,7 @@ const drawerLogo = {
 const drawerLabel = {
     paddingBottom: '20px',
     textAlign: 'center',
-    fontFamily: 'Lato',
+    fontFamily: 'Helvetica',
     fontWeight: '300',
     fontSize: '20px',
     color: '#27496D',
@@ -194,7 +194,7 @@ const baristaLink = {
     left: '25%',
     right: '25%',
     bottom: 10,
-    fontFamily: 'Lato',
+    fontFamily: 'Helvetica',
     fontSize: '18px',
     textDecoration: 'none',
     color: '#27496D'

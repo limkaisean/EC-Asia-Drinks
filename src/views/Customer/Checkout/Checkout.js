@@ -93,22 +93,23 @@ function Checkout(props) {
 
 const main = {
     height: '100vh',
-    backgroundColor: '#FFECD0',
-    fontFamily: 'Lato',
+    backgroundColor: '#B3C7D6FF',
+    fontFamily: 'Helvetica',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    color: 'black'
 };
 
 const footing = {
-    backgroundColor: '#FFECD0',
+    backgroundColor: '#B3C7D6FF',
     paddingBottom: '40px',
     textAlign: 'right'
 };
 
 const beverages = {
     padding: '40px',
-    backgroundColor: '#FFECD0',
-    fontFamily: 'Lato',
+    backgroundColor: '#B3C7D6FF',
+    fontFamily: 'Helvetica',
     fontSize: '32px'
 };
 
@@ -122,7 +123,7 @@ const orderButton = {
     minHeight: '70px',
     marginLeft: 'auto',
     marginRight: '40px',
-    fontFamily: 'Lato',
+    fontFamily: 'Helvetica',
     fontSize: '23px',
     backgroundColor: 'orange'
 };
@@ -130,8 +131,8 @@ const orderButton = {
 const clearButton = {
     height: '50px',
     width: '150px',
-    fontFamily: 'Lato',
-    fontSize: '20px',
+    fontFamily: 'Helvetica',
+    fontSize: '18px',
     border: 'none',
     borderRadius: '8px',
 };

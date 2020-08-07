@@ -57,7 +57,8 @@ function Beverages() {
 
 const main = {
     //height: '100vh',
-    backgroundColor: '#FFECD0'
+    backgroundColor: '#B3C7D6FF',
+    color: 'black'
 };
 
 const beverages = {
@@ -66,8 +67,9 @@ const beverages = {
 
 const types = {
     margin: 'auto',
-    fontSize: '40px',
-    fontFamily: 'Lato',
+    fontSize: '35px',
+    fontFamily: 'Helvetica',
+    color: 'black'
 };
 
 export default Beverages;

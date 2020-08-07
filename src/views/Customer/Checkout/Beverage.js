@@ -46,11 +46,11 @@ function Beverage(props) {
 const panel = {
     margin: '1em auto',
     paddingBottom: '20px',
-    minHeight: '180px',
+    minHeight: '200px',
     height: 'auto',
     minWidth: '700px',
     width: '100%',
-    backgroundColor: '#f6c667',
+    backgroundColor: '#D9B48FFF',
     borderRadius: '12px',
     display: 'flex',
     flexDirection: 'row',
