@@ -106,7 +106,7 @@ function Header(props) {
                 }
                 </span>
             </div>
-            <span style={{marginRight: '0', marginLeft: 'auto'}}></span>
+            {/* <span style={{}}></span> */}
         </div>
     );
 }
@@ -143,9 +143,9 @@ const middle = {
     flexDirection: 'column',
     justifyContent: 'center',
     marginTop: '30px',
-    marginLeft: 'auto',
+    //marginLeft: 'auto',
     marginRight: 'auto',
-    paddingLeft: '30px',
+    //paddingLeft: '30px',
     textAlign: 'center'
 };
 

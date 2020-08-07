@@ -17,6 +17,7 @@ const ORDER_FAILED_MSG = 'We are unable to place your order, please try again or
 const EMPTY_CART_MESSAGE = 'Add beverages from the menu!';
 
 function handleOrder(websocket, meetingRoom, byIds) {
+    console.log(byIds);
     if (Object.keys(byIds).length > 0) websocket.emit('order_request', {meetingRoom: meetingRoom, beverages: Object.values(byIds)});
 }
 

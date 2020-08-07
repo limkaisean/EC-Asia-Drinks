@@ -27,7 +27,7 @@ function App() {
     });
 
     return () => {
-      websocket.close();
+      websocket.disconnect();
     };
   }, []);
   

@@ -46,8 +46,8 @@ function Beverage(props) {
 const panel = {
     margin: '1em auto',
     paddingBottom: '20px',
-    minHeight: '170px',
-    height: '10%',
+    minHeight: '180px',
+    height: 'auto',
     minWidth: '700px',
     width: '100%',
     backgroundColor: '#f6c667',

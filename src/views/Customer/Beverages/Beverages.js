@@ -65,6 +65,7 @@ const beverages = {
 };
 
 const types = {
+    margin: 'auto',
     fontSize: '40px',
     fontFamily: 'Lato',
 };
