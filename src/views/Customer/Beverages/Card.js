@@ -21,14 +21,14 @@ function Card(props){
 const panel = {
     minHeight: '120px',
     height: '10%',
-    minWidth: '200px',
+    minWidth: '350px',
     flexBasis: '32%',
     margin: '1em auto',
     backgroundColor: '#ddbfa1',
     borderRadius: '2px',
     fontFamily: 'Helvetica',
     display: 'flex',
-    //flexDirection: 'row',
+    flexDirection: 'row',
 };
 
 const name = {
