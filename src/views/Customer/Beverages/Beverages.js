@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../../components/Header';
 import Beverage from './Beverage';
 import PopUp from './PopUp';
+import Card from './Card';
 
 import BEVERAGES from '../../../menu';
 
@@ -38,16 +39,32 @@ function Beverages() {
                 <Header title={TITLE}/>
                 {getGroups()}
                 {groups.map((group) =>{
-                    return(
-                        <div style={beverages}>
-                            <h1 style={types}>{group}</h1>
-                            {Object.keys(BEVERAGES).map((name) => {
-                                if (BEVERAGES[name].group == group){
-                                    return <Beverage info={BEVERAGES[name]} customClick={handleOpen.bind(this, BEVERAGES[name])}/>
-                                } 
-                            })}
-                        </div>
-                    )
+                    if(group === 'COFFEE'){
+                        return(
+                            <div>
+                                <h1 style={types}>{group}</h1>
+                                <div style={coffees}>
+                                    {Object.keys(BEVERAGES).map((name) => {
+                                        if (BEVERAGES[name].group === group){
+                                            return <Card info={BEVERAGES[name]} customClick={handleOpen.bind(this, BEVERAGES[name])}/>
+                                        } 
+                                    })}
+                                </div>
+                            </div>
+                        )
+                    }
+                    else{
+                        return(
+                            <div style={beverages}>
+                                <h1 style={types}>{group}</h1>
+                                {Object.keys(BEVERAGES).map((name) => {
+                                    if (BEVERAGES[name].group === group){
+                                        return <Beverage info={BEVERAGES[name]} customClick={handleOpen.bind(this, BEVERAGES[name])}/>
+                                    } 
+                                })}
+                            </div>
+                        )
+                    }
                 })}
             </div> 
             {open ? <PopUp info={popupInfo} open={open} handleClose={handleClose.bind(this)}/> : null}
@@ -58,7 +75,7 @@ function Beverages() {
 const main = {
     //height: '100vh',
     backgroundColor: '#B3C7D6FF',
-    color: 'black'
+    color: '#6E4C1EFF'
 };
 
 const beverages = {
@@ -69,7 +86,13 @@ const types = {
     margin: 'auto',
     fontSize: '35px',
     fontFamily: 'Helvetica',
-    color: 'black'
+    color: 'black',
+    paddingTop: '20px'
 };
+
+const coffees = {
+    display: 'flex',
+    flexWrap: 'wrap'
+}
 
 export default Beverages;
