@@ -22,7 +22,7 @@ const panel = {
     minHeight: '120px',
     height: '10%',
     minWidth: '200px',
-    flexBasis: '30%',
+    flexBasis: '32%',
     margin: '1em auto',
     backgroundColor: '#ddbfa1',
     borderRadius: '2px',
