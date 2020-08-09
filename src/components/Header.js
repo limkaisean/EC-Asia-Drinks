@@ -204,7 +204,7 @@ const baristaLink = {
 }
 
 const cart = {
-    width: '50px',
+    width: '40px',
     margin: '40px 40px 25px 0px'
 }
 
