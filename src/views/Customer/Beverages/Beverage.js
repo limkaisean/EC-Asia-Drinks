@@ -71,8 +71,8 @@ const name = {
 const description = {
     textAlign: 'left',
     fontSize: '18px',
-    padding: '10px 30px',
-    width: '90%',
+    padding: '10px 30px 30px 30px',
+    width: '95%',
     minWidth: '20%'
 };
 

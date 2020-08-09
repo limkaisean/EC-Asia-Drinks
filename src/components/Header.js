@@ -13,6 +13,7 @@ import TextField from '@material-ui/core/TextField';
 
 import { setMeetingRoom } from '../redux/actions';
 import MicrosoftLogo from '../MicrosoftLogo.svg';
+import Cart from '../shoppingCart.png';
 
 const useStyles = makeStyles({
     list: {
@@ -106,7 +107,9 @@ function Header(props) {
                 }
                 </span>
             </div>
-            {/* <span style={{}}></span> */}
+            <Link to='/checkout'>
+                <img src={Cart} style={cart}/>
+            </Link>
         </div>
     );
 }
@@ -198,6 +201,11 @@ const baristaLink = {
     fontSize: '18px',
     textDecoration: 'none',
     color: '#27496D'
+}
+
+const cart = {
+    width: '50px',
+    margin: '40px 40px 25px 0px'
 }
 
 export default Header;
