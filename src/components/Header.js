@@ -107,9 +107,13 @@ function Header(props) {
                 }
                 </span>
             </div>
-            <Link to='/checkout'>
+            {props.isBarista ?
                 <img src={Cart} style={cart}/>
-            </Link>
+                :
+                <Link to= '/checkout'>
+                    <img src={Cart} style={cart}/>
+                </Link>
+            }          
         </div>
     );
 }
