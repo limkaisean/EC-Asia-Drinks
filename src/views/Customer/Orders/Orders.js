@@ -47,7 +47,7 @@ const main = {
     height: '100vh',
     width: '100%',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
 };
 
 const ordersList = {

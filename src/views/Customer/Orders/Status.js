@@ -107,6 +107,7 @@ const circle = {
     display: 'inline-block',
     backgroundColor: '#915B4A',
     borderRadius: '50%',
+    color: '#6E4C1EFF'
 };
 
 const connector = {

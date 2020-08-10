@@ -85,10 +85,10 @@ const panel = {
     minWidth: '700px',
     width: '90%',
     margin: '2% auto',
-    backgroundColor: '#F0CB94',
+    backgroundColor: '#ddbfa1',
     borderRadius: '2px',
     fontSize: '30px',
-    fontFamily: 'Lato',
+    fontFamily: 'Helvetica',
     fontWeight: '300',
     color: '#915B4A',
     boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
@@ -96,6 +96,7 @@ const panel = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    color: '#6E4C1EFF'      
 };
 
 const panelHover = {

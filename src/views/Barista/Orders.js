@@ -19,6 +19,7 @@ function Orders(props) {
 
         props.websocket.on('update_orders', data => {
             setOrders(data.orders);
+            window.location.reload();
         });
 
         props.websocket.emit('barista_orders_request', {});
@@ -32,6 +33,7 @@ function Orders(props) {
             <div style={ordersList} >
                 {
                     Object.keys(orders).map((id, i) => {
+                        console.log(orders);
                         return <Order key={i} websocket={props.websocket} info={orders[id]} />
                     })
                 }
