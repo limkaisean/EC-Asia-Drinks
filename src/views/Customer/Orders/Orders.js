@@ -21,7 +21,7 @@ function Orders(props) {
         });
 
         props.websocket.on('update_status_relay', data => {
-            setOrders({});
+            setOrders(orders);
         });
         
         props.websocket.emit('confirmed_orders_request', { meetingRoom: meetingRoom });

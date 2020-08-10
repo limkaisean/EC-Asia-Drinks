@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import { Link } from "react-router-dom";
 
 import Header from '../../../components/Header';
 import Beverage from './Beverage';
@@ -47,9 +48,11 @@ function Beverages() {
     return (
         <div>
             <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }} open={beverageAdded} autoHideDuration={2000} onClose={() => setBeverageAdded(false)}>
-                <Alert onClose={() => setBeverageAdded(false)} severity="success">
-                    Beverage/Beverages successfully added to the cart!
-                </Alert>
+                <Link style={link} to= '/checkout'>
+                    <Alert onClose={() => setBeverageAdded(false)} severity="success">
+                        Beverage/Beverages successfully added to the cart!
+                    </Alert>
+                </Link>
             </Snackbar>
             <div style={main}>
                 <Header title={TITLE}/>
@@ -109,6 +112,10 @@ const types = {
 const coffees = {
     display: 'flex',
     flexWrap: 'wrap'
+}
+
+const link = {
+    textDecoration: 'none' 
 }
 
 export default Beverages;
