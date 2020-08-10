@@ -31,6 +31,7 @@ function PopUp(props){
         if (quantity !== ''){
             dispatch(addBeverage({ ...props.info, quantity: quantity, optionValues: optionValues}));
             props.handleClose();
+            props.handleSubmit();
         }
 
         else {

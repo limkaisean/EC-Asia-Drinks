@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 import Header from '../../../components/Header';
 import Beverage from './Beverage';
@@ -14,6 +16,7 @@ function Beverages() {
     const [groups,setGroups] = React.useState([]);
     const [open, setOpen] = React.useState(false);
     const [popupInfo, setPopupInfo] = React.useState([]);
+    const [beverageAdded, setBeverageAdded] = React.useState(false);
 
     const handleOpen = (info) => {
         setOpen(true);
@@ -33,8 +36,21 @@ function Beverages() {
         })
     };
 
+    const handleBeverageAdded = (value) => {
+        setBeverageAdded(true);
+    }
+
+    function Alert(props) {
+        return <MuiAlert elevation={6} variant="filled" {...props} />;
+    }
+
     return (
         <div>
+            <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }} open={beverageAdded} autoHideDuration={2000} onClose={() => setBeverageAdded(false)}>
+                <Alert onClose={() => setBeverageAdded(false)} severity="success">
+                    Beverage/Beverages successfully added to the cart!
+                </Alert>
+            </Snackbar>
             <div style={main}>
                 <Header title={TITLE}/>
                 {getGroups()}
@@ -67,7 +83,7 @@ function Beverages() {
                     }
                 })}
             </div> 
-            {open ? <PopUp info={popupInfo} open={open} handleClose={handleClose.bind(this)}/> : null}
+            {open ? <PopUp info={popupInfo} open={open} handleSubmit={handleBeverageAdded.bind(this)} handleClose={handleClose.bind(this)}/> : null}
         </div>
     );
 }
