@@ -24,7 +24,7 @@ function OrderPopup(props) {
                     </div> 
                     <div style={bottomInfo}>
                         <div style={meetingRoomStyle}>Meeting Room <span style={bold}>{info.meetingRoom}</span></div>
-                        <Status websocket={props.websocket} handleOrderClose={props.handleClose} info={info} /> 
+                        <Status websocket={props.websocket} handleOrderClose={props.handleClose} info={info} style={statusStyle}/> 
                     </div>
                 </DialogContent>
             </div>
@@ -47,13 +47,14 @@ function OrderPopup(props) {
 /* CSS */
 
 const header = {
-    backgroundColor: '#27496D',
+    backgroundColor: '#2460A7FF',
     color: '#f3f3f3',
-    fontSize: '24px'
+    fontSize: '24px',
+    display: 'flex',
 };
 
 const body = {
-    backgroundColor: '#FFECD0'
+    backgroundColor: '#B3C7D6FF'
 };
 
 const bottomInfo = {
@@ -61,7 +62,8 @@ const bottomInfo = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingTop: '10px'
+    paddingTop: '10px',
+    flexWrap: 'wrap',
 };
 
 const idStyle = {
@@ -85,6 +87,10 @@ const closeButton = {
 const bold = {
     fontWeight: '700'
 };
+
+const statusStyle = {
+    flex: '0 1 40%'
+}
 
 
 export default OrderPopup;

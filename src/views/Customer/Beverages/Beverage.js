@@ -30,14 +30,14 @@ function Beverage(props) {
 /* CSS */
 
 const panel = {
-    minHeight: '240px',
+    minHeight: '160px',
     height: '10%',
-    minWidth: '700px',
+    minWidth: '160px',
     width: '100%',
     margin: '1em auto',
-    backgroundColor: '#f6c667',
+    backgroundColor: '#ddbfa1',
     borderRadius: '2px',
-    fontFamily: 'Lato',
+    fontFamily: 'Helvetica',
     display: 'flex',
     flexDirection: 'row',
 };
@@ -63,16 +63,16 @@ const addButton = {
 
 const name = {
     textAlign: 'left',
-    fontSize: '36px',
-    padding: '30px',
-    fontWeight: '900',
+    fontSize: '30px',
+    padding: '30px 30px 10px 30px',
+    fontWeight: 'normal',
 };
 
 const description = {
     textAlign: 'left',
-    fontSize: '26px',
-    padding: '10px 30px',
-    width: '80%',
+    fontSize: '18px',
+    padding: '10px 30px 30px 30px',
+    width: '95%',
     minWidth: '20%'
 };
 

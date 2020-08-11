@@ -43,14 +43,14 @@ function Beverage(props) {
 
 /* CSS */
 
-const panel = {
+const panel = { 
     margin: '1em auto',
     paddingBottom: '20px',
-    minHeight: '180px',
+    minHeight: '150px',
     height: 'auto',
-    minWidth: '700px',
+    minWidth: '200px',
     width: '100%',
-    backgroundColor: '#f6c667',
+    backgroundColor: '#ddbfa1',
     borderRadius: '12px',
     display: 'flex',
     flexDirection: 'row',
@@ -62,7 +62,7 @@ const name = {
     textAlign: 'left',
     fontSize: '30px',
     padding: '30px',
-    fontWeight: '900',
+    fontWeight: 'normal',
 };
 
 const options = {
@@ -75,8 +75,8 @@ const options = {
 
 const optionValue = {
     fontSize: '22px',
-    color: '#eb8242',
-    fontWeight: '900'
+    color: '#6E4C1EFF',
+    fontWeight: '700'
 };
 
 const buttonContainer = {
@@ -86,9 +86,9 @@ const buttonContainer = {
 };
 
 const quantity = {
-    color: '#eb8242',
+    color: '#6E4C1EFF',
     fontSize: '48px',
-    fontWeight: '900',
+    fontWeight: '500',
     borderRadius: '20%',
     border: 'none',
     marginRight: '30px'
@@ -97,16 +97,16 @@ const quantity = {
 const quantityButton = {
     width: '40px',
     backgroundColor: '#f3f3f3',
-    color: 'orange',
+    color: '2460A7FF',
     fontSize: '28px',
-    border: '3px solid orange',
+    border: '3px solid #6E4C1EFF',
     marginRight: '30px',
     textAlign: 'center'
 };
 
 const deleteButton = {
     color: '#222831',
-    fontSize: '24px',
+    fontSize: '30px',
     borderRadius: '20%',
     border: 'none',
     marginLeft: '50px',

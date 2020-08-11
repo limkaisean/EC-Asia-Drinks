@@ -33,19 +33,20 @@ const panel = {
     paddingBottom: '20px',
     height: '10%',
     width: '100%',
-    backgroundColor: '#f6c667',
+    backgroundColor: '#ddbfa1',
     borderRadius: '12px',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    color: '#915B4A',
 };
 
 const name = {
     textAlign: 'left',
     fontSize: '30px',
     padding: '30px',
-    fontWeight: '900',
+    fontWeight: 'normal',
 };
 
 const options = {
@@ -57,9 +58,9 @@ const options = {
 };
 
 const optionValue = {
-    fontSize: '22px',
-    color: '#eb8242',
-    fontWeight: '900'
+    fontSize: '20px',
+    color: 'black',
+    fontWeight: 'normal'
 };
 
 const buttonContainer = {
@@ -69,10 +70,9 @@ const buttonContainer = {
 };
 
 const quantity = {
-    color: '#222831',
-    fontSize: '48px',
+    fontSize: '40px',
     fontWeight: '900',
-    color: '#eb8242',
+    color: 'black',
     borderRadius: '20%',
     border: 'none',
     marginRight: '30px'

@@ -46,7 +46,7 @@ function Order(props) {
                         Ordered at <span style={bold}>{time}</span>
                     </div>
                 </div>
-                <Status current={status} />
+                <Status current={status} style={statusStyle}/>
                 <span></span>
             </div>
             <Dialog
@@ -81,21 +81,24 @@ function Order(props) {
 
 const panel = {
     minHeight: '150px',
-    height: '7em',
-    minWidth: '700px',
+    height: 'auto',
+    minWidth: '160px',
     width: '90%',
     margin: '2% auto',
-    backgroundColor: '#F0CB94',
+    backgroundColor: '#ddbfa1',
     borderRadius: '2px',
-    fontSize: '30px',
-    fontFamily: 'Lato',
+    fontSize: '28px',
+    fontFamily: 'Helvetica',
     fontWeight: '300',
     color: '#915B4A',
     boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
     transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
     display: 'flex',
     flexDirection: 'row',
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
+    color: '#6E4C1EFF',
+    padding: '20px',  
 };
 
 const panelHover = {
@@ -105,17 +108,17 @@ const panelHover = {
 
 const fixedInfo = {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'space-between',
 };
 
 const popupHeader = {
-    backgroundColor: '#27496D',
+    backgroundColor: '#2460A7FF',
     color: '#f3f3f3'
 };
 
 const popupBody = {
-    backgroundColor: '#FFECD0'
+    backgroundColor: '#B3C7D6FF'
 };
 
 const closeButton = {
@@ -135,5 +138,10 @@ const timeStyle = {
     padding: '15px',
     textAlign: 'left',
 };
+
+const statusStyle = {
+    //display: 'inline-block',
+    flex: '0 1 40%'
+}
 
 export default Order;

@@ -19,6 +19,7 @@ function Orders(props) {
 
         props.websocket.on('update_orders', data => {
             setOrders(data.orders);
+            window.location.reload();
         });
 
         props.websocket.emit('barista_orders_request', {});
@@ -32,6 +33,7 @@ function Orders(props) {
             <div style={ordersList} >
                 {
                     Object.keys(orders).map((id, i) => {
+                        console.log(orders);
                         return <Order key={i} websocket={props.websocket} info={orders[id]} />
                     })
                 }
@@ -43,7 +45,7 @@ function Orders(props) {
 /* CSS */
 
 const main = {
-    height: '100%',
+    //height: '100%',
     width: '100%',
     margin: '0',
     position: 'absolute',
@@ -54,7 +56,7 @@ const main = {
 const ordersList = {
     height: '90%',
     width: '100%',
-    backgroundColor: '#FFECD0',
+    backgroundColor: '#B3C7D6FF',
 };
 
 export default Orders;

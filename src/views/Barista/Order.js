@@ -40,7 +40,7 @@ function Order(props) {
                     </div>
                 </div>
                 <div style={statusStyle}>
-                    <span style={shadow}>{info.status}</span>
+                    <span>{info.status}</span>
                 </div>
             </div>
             <Dialog
@@ -59,17 +59,17 @@ function Order(props) {
 /* CSS */
 
 const panel = {
-    minHeight: '200px',
+    minHeight: '160px',
     height: '10%',
-    minWidth: '700px',
+    minWidth: '160px',
     width: '90%',
-    margin: '2% auto',
-    backgroundColor: '#F0CB94',
+    margin: '1em auto',
+    backgroundColor: '#ddbfa1',
     borderRadius: '2px',
-    fontFamily: 'Lato',
-    fontSize: '30px',
+    fontFamily: 'Helvetica',
+    fontSize: '28px',
     fontWeight: '300',
-    color: '#915B4A',
+    color: '#6E4C1EFF',
     boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
     transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
     display: 'flex',
@@ -87,13 +87,14 @@ const fixedInfo = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-start',
+    padding: '20px'
 };
 
 const statusStyle = {
-    fontSize: '48px',
-    color: '#0074E4',
+    fontSize: '40px',
+    color: 'black',
     fontWeight: '700',
-    marginRight: '40px'
+    marginRight: '40px',
 };
 
 const shadow = {
@@ -118,7 +119,7 @@ const idStyle = {
 };
 
 const timeStyle = {
-    padding: '10px 20px',
+    padding: '10px 0px 20px 20px',
     paddingBottom: '10px',
     textAlign: 'left',
 };

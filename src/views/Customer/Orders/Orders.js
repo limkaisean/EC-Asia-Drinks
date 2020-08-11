@@ -21,7 +21,7 @@ function Orders(props) {
         });
 
         props.websocket.on('update_status_relay', data => {
-            setOrders({});
+            setOrders(orders);
         });
         
         props.websocket.emit('confirmed_orders_request', { meetingRoom: meetingRoom });
@@ -47,13 +47,13 @@ const main = {
     height: '100vh',
     width: '100%',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
 };
 
 const ordersList = {
     height: '90%',
     width: '100%',
-    backgroundColor: '#FFECD0',
+    backgroundColor: '#B3C7D6FF',
 };
 
 export default Orders;
