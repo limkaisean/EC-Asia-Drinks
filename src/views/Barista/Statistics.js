@@ -47,21 +47,23 @@ function Statistics(props) {
 
 const main = {
     minHeight: '90px',
+    height: 'auto',
     backgroundColor: '#5CC2F2',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    flexBasis: '30%'
 };
 
 const statistic = {
     color: '#F3F3F3',
-    fontSize: '38px',
-    padding: '25px'
+    fontSize: '30px',
+    padding: '25px',
 };
 
 const number = {
-    fontSize: '50px',
+    fontSize: '40px',
     fontWeight: '900'
 };
 

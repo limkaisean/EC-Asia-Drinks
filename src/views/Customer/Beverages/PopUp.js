@@ -20,7 +20,6 @@ function PopUp(props){
     const dispatch = useDispatch();
     function submitOrder(){
         const optionValues = {};
-        console.log(options)
         Object.keys(options).map((key) => {
             optionValues[key] = options[key];
         })
@@ -32,6 +31,7 @@ function PopUp(props){
         if (quantity !== ''){
             dispatch(addBeverage({ ...props.info, quantity: quantity, optionValues: optionValues}));
             props.handleClose();
+            props.handleSubmit();
         }
 
         else {
@@ -122,10 +122,12 @@ function PopUp(props){
 
 const modal = {
     display: 'flex',
+    //display: 'block',
     alignItems: 'center',
     justifyContent: 'center',
-    // overflow: 'auto',
-    fontFamily: 'Lato',
+    overflow: 'auto',
+    fontFamily: 'Helvetica',
+    padding: '2.5% 0%'
 }
 
 const popup = {
@@ -135,18 +137,21 @@ const popup = {
     height: 'auto',
     width: '75%',
     outline: 'none',
-    padding: '2.5% 5%',
-    overflowY: 'auto',
+    //padding: '5%',
+    padding: '2.5%',
+    // paddingTop: '2.5%',
+    // paddingBottom: '2.5%',
+    // overflowY: 'auto',
     scrollPaddingTop: '200px',
     borderRadius: '20px',
-    fontFamily: 'Lato',
-    fontSize: '20px'
+    fontFamily: 'Helvetica',
+    fontSize: '18px'
 }
 
 const radio = {
     paddingBottom: '2.5%',
     marginRight: '15%',
-    fontFamily: 'Lato',
+    fontFamily: 'Helvetica',
 }
 
 const select = {

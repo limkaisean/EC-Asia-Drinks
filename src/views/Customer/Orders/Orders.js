@@ -21,11 +21,11 @@ function Orders(props) {
         });
 
         props.websocket.on('update_status_relay', data => {
-            setOrders({});
+            setOrders(orders);
         });
-
+        
         props.websocket.emit('confirmed_orders_request', { meetingRoom: meetingRoom });
-    }, [props.websocket]);
+    }, [props.websocket, meetingRoom]);
 
     return (
         <div className="OrdersCustomers" style={main}>
@@ -44,18 +44,16 @@ function Orders(props) {
 /* CSS */
 
 const main = {
-    height: '100%',
+    height: '100vh',
     width: '100%',
-    margin: '0',
-    position: 'absolute',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
 };
 
 const ordersList = {
-    height: '100%',
+    height: '90%',
     width: '100%',
-    backgroundColor: '#FFECD0',
+    backgroundColor: '#B3C7D6FF',
 };
 
 export default Orders;

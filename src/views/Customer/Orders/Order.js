@@ -15,8 +15,10 @@ function Order(props) {
     const [open, setOpen] = React.useState(false);
     const [fullWidth, setFullWidth] = React.useState(true);
     const [maxWidth, setMaxWidth] = React.useState('sm');
+
+    const [isHovering, setIsHovering] = useState(false);
   
-    const handleClickOpen = () => {
+    const handleOpen = () => {
       setOpen(true);
     };
   
@@ -24,16 +26,28 @@ function Order(props) {
       setOpen(false);
     };
 
+    const onMouseEnter = () => {
+        setIsHovering(true);
+    };
+
+    const onMouseLeave = () => {
+        setIsHovering(false);
+    };
+
     return (
-        <div>
-            <div style={panel} onClick={handleClickOpen}>
-                <div style={idStyle}>
-                    #<span style={bold}>{id}</span>
+        <div onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave} > 
+            <div style={isHovering ? panelHover : panel} onClick={handleOpen}>
+                <div style={fixedInfo}>
+                    <div style={idStyle}>
+                        #<span style={bold}>{id}</span>
+                    </div>
+                    <div style={timeStyle}>
+                        Ordered at <span style={bold}>{time}</span>
+                    </div>
                 </div>
-                <Status current={status} />
-                <div style={timeStyle}>
-                    Ordered at <span style={bold}>{time}</span>
-                </div>
+                <Status current={status} style={statusStyle}/>
+                <span></span>
             </div>
             <Dialog
                 fullWidth={fullWidth}
@@ -66,26 +80,45 @@ function Order(props) {
 /* CSS */
 
 const panel = {
-    minHeight: '200px',
-    height: '10%',
-    minWidth: '700px',
+    minHeight: '150px',
+    height: 'auto',
+    minWidth: '160px',
     width: '90%',
     margin: '2% auto',
-    backgroundColor: '#F0CB94',
+    backgroundColor: '#ddbfa1',
     borderRadius: '2px',
-    fontSize: '42px',
-    fontFamily: 'Lato',
+    fontSize: '28px',
+    fontFamily: 'Helvetica',
     fontWeight: '300',
-    color: '#915B4A'
+    color: '#915B4A',
+    boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+    transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    color: '#6E4C1EFF',
+    padding: '20px',  
+};
+
+const panelHover = {
+    ...panel,
+    boxShadow: '0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)'
+};
+
+const fixedInfo = {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'space-between',
 };
 
 const popupHeader = {
-    backgroundColor: '#27496D',
+    backgroundColor: '#2460A7FF',
     color: '#f3f3f3'
 };
 
 const popupBody = {
-    backgroundColor: '#FFECD0'
+    backgroundColor: '#B3C7D6FF'
 };
 
 const closeButton = {
@@ -94,11 +127,6 @@ const closeButton = {
 
 const bold = {
     fontWeight: '700'
-};
-
-const title = {
-    ...bold,
-    fontSize: '35px'
 };
 
 const idStyle = {
@@ -110,5 +138,10 @@ const timeStyle = {
     padding: '15px',
     textAlign: 'left',
 };
+
+const statusStyle = {
+    //display: 'inline-block',
+    flex: '0 1 40%'
+}
 
 export default Order;

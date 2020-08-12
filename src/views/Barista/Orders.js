@@ -9,7 +9,7 @@ const TITLE = 'Orders';
 
 function Orders(props) {
     const [orders, setOrders] = useState({});
-
+   
     useEffect(() => {
         if (!props.websocket) return;
 
@@ -17,14 +17,9 @@ function Orders(props) {
             setOrders(orders);
         });
 
-        props.websocket.on('barista_order_relay', order => {
-            // const newOrders = _.cloneDeep(orders);
-            // newOrders[order.id] = order;
-            setOrders({});
-        });
-
         props.websocket.on('update_orders', data => {
             setOrders(data.orders);
+            window.location.reload();
         });
 
         props.websocket.emit('barista_orders_request', {});
@@ -33,12 +28,12 @@ function Orders(props) {
 
     return (
         <div style={main}>
-            <Header title={TITLE} />
+            <Header title={TITLE} isBarista={true} />
             <Statistics orders={orders} />
             <div style={ordersList} >
                 {
                     Object.keys(orders).map((id, i) => {
-                        console.log(id, orders[id])
+                        console.log(orders);
                         return <Order key={i} websocket={props.websocket} info={orders[id]} />
                     })
                 }
@@ -50,7 +45,7 @@ function Orders(props) {
 /* CSS */
 
 const main = {
-    height: '100%',
+    //height: '100%',
     width: '100%',
     margin: '0',
     position: 'absolute',
@@ -58,22 +53,10 @@ const main = {
     flexDirection: 'column'
 };
 
-const header = {
-    minHeight: '150px',
-    height: '10%',
-    width: '100%',
-    margin: '0 auto',
-    backgroundColor: '#5CC2F2',
-    color: '#F3F3F3',
-    fontSize: '70px',
-    fontFamily: 'Lato',
-    fontWeight: '300'
-};
-
 const ordersList = {
-    height: '100%',
+    height: '90%',
     width: '100%',
-    backgroundColor: '#FFECD0',
+    backgroundColor: '#B3C7D6FF',
 };
 
 export default Orders;

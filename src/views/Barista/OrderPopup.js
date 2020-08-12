@@ -19,13 +19,13 @@ function OrderPopup(props) {
             <div style={header}>
                 <DialogContent id="max-width-dialog-title">
                     <div style={idStyle}>#<span style={bold}>{info.id}</span></div>
-                    <div style={middleInfo}>
-                        <div style={meetingRoomStyle}>Meeting Room <span style={bold}>{info.meetingRoom}</span></div>
-                        <Status websocket={props.websocket} info={info} /> 
-                    </div>
                     <div style={timeStyle}>
                         Ordered at <span style={bold}>{info.time}</span>
                     </div> 
+                    <div style={bottomInfo}>
+                        <div style={meetingRoomStyle}>Meeting Room <span style={bold}>{info.meetingRoom}</span></div>
+                        <Status websocket={props.websocket} handleOrderClose={props.handleClose} info={info} style={statusStyle}/> 
+                    </div>
                 </DialogContent>
             </div>
             <div style={body}> 
@@ -47,21 +47,23 @@ function OrderPopup(props) {
 /* CSS */
 
 const header = {
-    backgroundColor: '#27496D',
+    backgroundColor: '#2460A7FF',
     color: '#f3f3f3',
-    fontSize: '24px'
+    fontSize: '24px',
+    display: 'flex',
 };
 
 const body = {
-    backgroundColor: '#FFECD0'
+    backgroundColor: '#B3C7D6FF'
 };
 
-const middleInfo = {
+const bottomInfo = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingTop: '10px'
+    paddingTop: '10px',
+    flexWrap: 'wrap',
 };
 
 const idStyle = {
@@ -70,12 +72,12 @@ const idStyle = {
 };
 
 const meetingRoomStyle = {
-    padding: '2px',
-    fontSize: '34px'
+    fontSize: '34px',
+    paddingTop: '10px'
 };
 
 const timeStyle = {
-    padding: '2px',
+    padding: '10px 2px',
 };
 
 const closeButton = {
@@ -85,6 +87,10 @@ const closeButton = {
 const bold = {
     fontWeight: '700'
 };
+
+const statusStyle = {
+    flex: '0 1 40%'
+}
 
 
 export default OrderPopup;

@@ -14,9 +14,10 @@ import BEVERAGES from '../../../menu';
 const TITLE = 'Checkout';
 const ORDER_SUCCESS_MSG = 'Your order has been successfully placed!';
 const ORDER_FAILED_MSG = 'We are unable to place your order, please try again or contact our staff';
-const EMPTY_CART_MESSAGE = 'Add beverages from the home page!';
+const EMPTY_CART_MESSAGE = 'Add beverages from the menu!';
 
 function handleOrder(websocket, meetingRoom, byIds) {
+    console.log(byIds);
     if (Object.keys(byIds).length > 0) websocket.emit('order_request', {meetingRoom: meetingRoom, beverages: Object.values(byIds)});
 }
 
@@ -92,29 +93,24 @@ function Checkout(props) {
 
 const main = {
     height: '100vh',
-    backgroundColor: '#FFECD0',
-    fontFamily: 'Lato',
+    backgroundColor: '#B3C7D6FF',
+    fontFamily: 'Helvetica',
     display: 'flex',
-    flexDirection: 'column'
-};
-
-const heading = {
-    paddingBottom: '30px',
-    marginTop: '20px',
-    marginLeft: '40px',
-    textAlign: 'left',
-    fontSize: '47px'
+    flexDirection: 'column',
+    color: 'black'
 };
 
 const footing = {
-    backgroundColor: '#FFECD0',
+    backgroundColor: '#B3C7D6FF',
     paddingBottom: '40px',
     textAlign: 'right'
 };
 
 const beverages = {
     padding: '40px',
-    backgroundColor: '#FFECD0'
+    backgroundColor: '#B3C7D6FF',
+    fontFamily: 'Helvetica',
+    fontSize: '32px'
 };
 
 const clearContainer = {
@@ -123,22 +119,25 @@ const clearContainer = {
 };
 
 const orderButton = {
-    width: '170px',
-    minHeight: '70px',
+    width: '150px',
+    minHeight: '60px',
     marginLeft: 'auto',
     marginRight: '40px',
-    fontFamily: 'Lato',
+    fontFamily: 'Helvetica',
     fontSize: '23px',
-    backgroundColor: 'orange'
+    backgroundColor: '#ddbfa1',
+    border: '3px solid #6E4C1EFF',
+    textTransform: 'none' 
 };
 
 const clearButton = {
     height: '50px',
     width: '150px',
-    fontFamily: 'Lato',
-    fontSize: '20px',
+    fontFamily: 'Helvetica',
+    fontSize: '18px',
     border: 'none',
     borderRadius: '8px',
+    textTransform: 'none'
 };
 
 
