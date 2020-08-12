@@ -32,6 +32,7 @@ function Header(props) {
         return state.meetingRoom.value;
     });
 
+    const [open, setOpen] = React.useState(false);
     const [value, setValue] = React.useState(meetingRoom);
     const [inputValue, setInputValue] = React.useState('');
 
@@ -44,6 +45,14 @@ function Header(props) {
         }
 
         setState(open);
+    };
+        
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
     };
 
     const list = (anchor) => (

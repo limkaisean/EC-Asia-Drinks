@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Route, Redirect } from "react-router-dom";
+import { useAuth } from "../Authentication/auth";
 import _ from 'underscore';
 
 import Header from '../../components/Header';
@@ -8,6 +10,7 @@ import Statistics from './Statistics';
 const TITLE = 'Orders';
 
 function Orders(props) {
+    const isAuthenticated = useAuth();
     const [orders, setOrders] = useState({});
    
     useEffect(() => {
