@@ -53,7 +53,7 @@ function App() {
                       <Route path="/checkout" render={props => <Checkout websocket={websocket} />} />
                       <Route path="/orders" render={props => <CustomerOrders websocket={websocket} />} />
                       {/* <Route path="/barista" render={props => <BaristaOrders websocket={websocket} />} /> */}
-                      <PrivateRoute path="/barista" component={BaristaOrders} />
+                      <PrivateRoute path="/barista" component={BaristaOrders} websocket={websocket}/>
                       <Route path="/login" render={props => <Login/>}/>
                     </Switch>
                   // </PageTransition>

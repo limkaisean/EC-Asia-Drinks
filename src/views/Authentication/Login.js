@@ -1,10 +1,37 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import { useAuth } from './auth';
+
 function Login(props) {
+
+    const [loggedIn, setLoggedIn] = React.useState(false);
+    const [username, setUsername] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    const isAuthenticated = useAuth();
+
+    const handleLogin = () => {
+        console.log(username);
+        console.log(password);
+        setLoggedIn(true);
+    }
+
+    const onUsernameChange = (event) => {
+        setUsername(event.target.value);
+    } 
+
+    const onPasswordChange = (event) => {
+        setPassword(event.target.value);
+    }
+
+    if (loggedIn) {
+
+        return <Redirect to="/barista" />;
+    }
+
     return(
         <div>
             <div style={backContainer}>
@@ -15,7 +42,7 @@ function Login(props) {
                 </Link>
             </div>
             <h1>Barista Login</h1>
-            <TextField required id="standard-required" label="Username:" defaultValue="" style={text}/>
+            <TextField required id="standard-required" label="Username:" defaultValue="" style={text} onChange={onUsernameChange}/>
             <br/>
             <TextField
             id="standard-password-input"
@@ -23,9 +50,10 @@ function Login(props) {
             type="password"
             autoComplete="current-password"
             style={text}
+            onChange={onPasswordChange}
             />
             <br/>
-            <Button variant="contained" color="primary" style={button}>
+            <Button variant="contained" color="primary" style={button} onClick={handleLogin}>
                 Log In
             </Button>
         </div>

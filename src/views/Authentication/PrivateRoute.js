@@ -2,13 +2,13 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { useAuth } from './auth';
 
-function PrivateRoute({component: Component, ...rest}) {
+function PrivateRoute({component: Component, websocket: websocket, ...rest}) {
     const isAuthenticated = useAuth();
 
     return (
         <Route {...rest} render={(props) => (
             isAuthenticated ? (
-                <Component {...props}/>
+                <Component websocket={websocket}/>
             ) : (
                 <Redirect to="/Login"/>
             )
