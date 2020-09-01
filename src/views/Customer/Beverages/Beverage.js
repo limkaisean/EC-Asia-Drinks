@@ -35,9 +35,9 @@ const panel = {
     minWidth: '160px',
     width: '100%',
     margin: '1em auto',
-    backgroundColor: '#ddbfa1',
+    backgroundColor: '#ffffff',
     borderRadius: '2px',
-    fontFamily: 'Helvetica',
+    fontFamily: 'Segoe UI',
     display: 'flex',
     flexDirection: 'row',
 };
@@ -52,7 +52,7 @@ const addButtonContainer = {
 };
 
 const addButton = {
-    backgroundColor: '#222831',
+    backgroundColor: '#263961',
     color: '#f3f3f3',
     fontSize: '50px',
     width: '60px',

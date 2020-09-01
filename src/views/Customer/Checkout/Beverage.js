@@ -50,7 +50,7 @@ const panel = {
     height: 'auto',
     minWidth: '200px',
     width: '100%',
-    backgroundColor: '#ddbfa1',
+    backgroundColor: '#FFFFFF',
     borderRadius: '12px',
     display: 'flex',
     flexDirection: 'row',
@@ -75,7 +75,7 @@ const options = {
 
 const optionValue = {
     fontSize: '22px',
-    color: '#6E4C1EFF',
+    color: 'black',
     fontWeight: '700'
 };
 
@@ -86,7 +86,7 @@ const buttonContainer = {
 };
 
 const quantity = {
-    color: '#6E4C1EFF',
+    color: 'black',
     fontSize: '48px',
     fontWeight: '500',
     borderRadius: '20%',
@@ -99,13 +99,13 @@ const quantityButton = {
     backgroundColor: '#f3f3f3',
     color: '2460A7FF',
     fontSize: '28px',
-    border: '3px solid #6E4C1EFF',
+    border: '3px solid black',
     marginRight: '30px',
     textAlign: 'center'
 };
 
 const deleteButton = {
-    color: '#222831',
+    color: 'black',
     fontSize: '30px',
     borderRadius: '20%',
     border: 'none',

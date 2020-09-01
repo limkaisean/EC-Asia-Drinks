@@ -85,19 +85,18 @@ const panel = {
     minWidth: '160px',
     width: '90%',
     margin: '2% auto',
-    backgroundColor: '#ddbfa1',
+    backgroundColor: '#ffffff',
     borderRadius: '2px',
     fontSize: '28px',
-    fontFamily: 'Helvetica',
+    fontFamily: 'Segoe UI',
     fontWeight: '300',
-    color: '#915B4A',
+    color: '#000000',
     boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
     transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)',
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    color: '#6E4C1EFF',
     padding: '20px',  
 };
 
@@ -113,16 +112,16 @@ const fixedInfo = {
 };
 
 const popupHeader = {
-    backgroundColor: '#2460A7FF',
-    color: '#f3f3f3'
+    backgroundColor: '#ffffff',
+    color: '#000000'
 };
 
 const popupBody = {
-    backgroundColor: '#B3C7D6FF'
+    backgroundColor: '#263961'
 };
 
 const closeButton = {
-    color: "#27496D"
+    color: "#ffffff"
 };
 
 const bold = {

@@ -45,18 +45,19 @@ function Orders(props) {
 /* CSS */
 
 const main = {
-    //height: '100%',
+    height: '100%',
     width: '100%',
     margin: '0',
     position: 'absolute',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    backgroundColor: '#263961',
+    overflow: 'auto'
 };
 
 const ordersList = {
     height: '90%',
     width: '100%',
-    backgroundColor: '#B3C7D6FF',
 };
 
 export default Orders;

@@ -9,6 +9,7 @@ import PopUp from './PopUp';
 import Card from './Card';
 
 import BEVERAGES from '../../../menu';
+import Banner from '../../../banner.jpg';
 
 const TITLE = "Beverages";
 
@@ -55,7 +56,7 @@ function Beverages() {
                 </Link>
             </Snackbar>
             <div style={main}>
-                <Header title={TITLE}/>
+                <Header title={TITLE} classname='top'/>
                 {getGroups()}
                 {groups.map((group) =>{
                     if(group === 'COFFEE'){
@@ -85,6 +86,7 @@ function Beverages() {
                         )
                     }
                 })}
+                <a href='#' style={a}>Back to top</a>
             </div> 
             {open ? <PopUp info={popupInfo} open={open} handleSubmit={handleBeverageAdded.bind(this)} handleClose={handleClose.bind(this)}/> : null}
         </div>
@@ -93,8 +95,13 @@ function Beverages() {
 
 const main = {
     //height: '100vh',
-    backgroundColor: '#B3C7D6FF',
-    color: '#6E4C1EFF'
+    // backgroundImage: `url(${Banner})`,
+    // backgroundRepeat: 'no-repeat',
+    // backgroundAttachment: 'fixed',
+    // backgroundPosition: 'center bottom',
+    backgroundColor: '#263961',
+    // backgroundSize: 'auto 65%',
+    color: 'black'
 };
 
 const beverages = {
@@ -104,8 +111,8 @@ const beverages = {
 const types = {
     margin: 'auto',
     fontSize: '35px',
-    fontFamily: 'Helvetica',
-    color: 'black',
+    fontFamily: 'Segoe UI',
+    color: '#FFFFFF',
     paddingTop: '20px'
 };
 
@@ -116,6 +123,10 @@ const coffees = {
 
 const link = {
     textDecoration: 'none' 
+}
+
+const a = {
+    color: '#FFFFFF'
 }
 
 export default Beverages;

@@ -33,13 +33,13 @@ const panel = {
     paddingBottom: '20px',
     height: '10%',
     width: '100%',
-    backgroundColor: '#ddbfa1',
+    backgroundColor: '#ffffff',
     borderRadius: '12px',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    color: '#915B4A',
+    color: '#000000',
 };
 
 const name = {

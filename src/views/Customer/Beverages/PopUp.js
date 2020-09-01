@@ -126,7 +126,7 @@ const modal = {
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'auto',
-    fontFamily: 'Helvetica',
+    fontFamily: 'Segoe UI',
     padding: '2.5% 0%'
 }
 
@@ -144,14 +144,14 @@ const popup = {
     // overflowY: 'auto',
     scrollPaddingTop: '200px',
     borderRadius: '20px',
-    fontFamily: 'Helvetica',
+    fontFamily: 'Segoe UI',
     fontSize: '18px'
 }
 
 const radio = {
     paddingBottom: '2.5%',
     marginRight: '15%',
-    fontFamily: 'Helvetica',
+    fontFamily: 'Segoe UI',
 }
 
 const select = {

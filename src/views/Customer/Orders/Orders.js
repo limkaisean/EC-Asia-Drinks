@@ -53,7 +53,7 @@ const main = {
 const ordersList = {
     height: '90%',
     width: '100%',
-    backgroundColor: '#B3C7D6FF',
+    backgroundColor: '#263961',
 };
 
 export default Orders;

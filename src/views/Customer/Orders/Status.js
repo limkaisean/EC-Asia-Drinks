@@ -79,12 +79,12 @@ const labelCircle = {
 const label = {
     fontSize: '20px',
     marginTop: '10px',
-    color: '#6E4C1EFF',
+    color: '#4bb1ff',
 };
 
 const labelSelected = {
     fontSize: '20px',
-    backgroundColor: '#2460A7FF',
+    backgroundColor: '#263961',
     color: '#F3F3F3',
     marginBottom: '17px',
     boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
@@ -95,7 +95,7 @@ const circleSelected = {
     height: '100px',
     width: '100px',
     display: 'inline-block',
-    backgroundColor: '#2460A7FF',
+    backgroundColor: '#263961',
     borderRadius: '50%',
     boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
     transition: 'all 0.3s cubic-bezier(.25,.8,.25,1)'
@@ -105,7 +105,7 @@ const circle = {
     height: '70px',
     width: '70px',
     display: 'inline-block',
-    backgroundColor: '#6E4C1EFF',
+    backgroundColor: '#4bb1ff',
     borderRadius: '50%',
     color: '#6E4C1EFF'
 };
