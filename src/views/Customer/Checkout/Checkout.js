@@ -10,7 +10,6 @@ import Header from '../../../components/Header';
 import Beverage from './Beverage';
 
 import BEVERAGES from '../../../menu';
-import Banner from '../../../banner.jpg';
 
 const TITLE = 'Checkout';
 const ORDER_SUCCESS_MSG = 'Your order has been successfully placed!';
@@ -96,14 +95,8 @@ function Checkout(props) {
 
 const main = {
     height: '100vh',
-    // backgroundImage: `url(${Banner})`,
-    // backgroundRepeat: 'no-repeat',
-    // backgroundAttachment: 'fixed',
-    // backgroundPosition: 'center bottom',
     backgroundColor: '#263961',
     fontFamily: 'Segoe UI',
-    //display: 'flex',
-    //flexDirection: 'column',
     color: '#000000',
     overflow: 'scroll'
 };

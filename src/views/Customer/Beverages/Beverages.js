@@ -9,7 +9,6 @@ import PopUp from './PopUp';
 import Card from './Card';
 
 import BEVERAGES from '../../../menu';
-import Banner from '../../../banner.jpg';
 
 const TITLE = "Beverages";
 
@@ -75,13 +74,15 @@ function Beverages() {
                     }
                     else{
                         return(
-                            <div style={beverages}>
+                            <div>
                                 <h1 style={types}>{group}</h1>
+                                <div style={beverages}>
                                 {Object.keys(BEVERAGES).map((name) => {
                                     if (BEVERAGES[name].group === group){
                                         return <Beverage info={BEVERAGES[name]} customClick={handleOpen.bind(this, BEVERAGES[name])}/>
                                     } 
                                 })}
+                                </div>
                             </div>
                         )
                     }
@@ -94,13 +95,7 @@ function Beverages() {
 }
 
 const main = {
-    //height: '100vh',
-    // backgroundImage: `url(${Banner})`,
-    // backgroundRepeat: 'no-repeat',
-    // backgroundAttachment: 'fixed',
-    // backgroundPosition: 'center bottom',
-    backgroundColor: '#263961',
-    // backgroundSize: 'auto 65%',
+    backgroundColor: '#0078D4',
     color: 'black'
 };
 
@@ -112,8 +107,10 @@ const types = {
     margin: 'auto',
     fontSize: '35px',
     fontFamily: 'Segoe UI',
-    color: '#FFFFFF',
-    paddingTop: '20px'
+    color: '#ffffff',
+    paddingTop: '20px',
+    //paddingBottom: '20px',
+    //backgroundColor: '#FFFFFF'
 };
 
 const coffees = {

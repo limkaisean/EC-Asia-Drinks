@@ -13,8 +13,8 @@ import TextField from '@material-ui/core/TextField';
 
 import { setMeetingRoom } from '../redux/actions';
 import MicrosoftLogo from '../MicrosoftLogo.svg';
-import Cart from '../shopping-cart.svg';
-import Banner from '../banner.jpg';
+import Cart from '../shoppingCart.png';
+import Banner from '../banner.png';
 
 const useStyles = makeStyles({
     list: {
@@ -126,9 +126,9 @@ const header = {
     height: '20%',
     minWidth: '375px',
     width: '100%',
-    //backgroundColor: '#263961',
     backgroundImage: `url(${Banner})`,
     backgroundRepeat: 'no-repeat',
+    backgroundSize: '100% 200px ',
     backgroundPosition: 'center',
     color: '#000000',
     fontSize: '40px',
@@ -189,9 +189,9 @@ const drawer = {
 };
 
 const subtitle = {
-    paddingTop: '20px',
+    //paddingTop: '20px',
     fontSize: '20px',
-    color: '#000000',
+    color: '#FFFFFF',
     fontWeight: '500',
 };
 
@@ -219,14 +219,12 @@ const cart = {
 }
 
 const title = {
-    color: '#000000',
+    color: '#FFFFFF',
     fontWeight: '500',
-    backgroundColor: '#FFFFFF'
 }
 
 const meetingRoomTitle = {
     color: '#FFFFFF',
-    backgroundColor: '#000000'
 }
 
 export default Header;
