@@ -9,6 +9,7 @@ import PopUp from './PopUp';
 import Card from './Card';
 
 import BEVERAGES from '../../../menu';
+import Background from '../../../background.png';
 
 const TITLE = "Beverages";
 
@@ -95,7 +96,13 @@ function Beverages() {
 }
 
 const main = {
-    backgroundColor: '#0078D4',
+    //backgroundColor: '#0078D4',
+    backgroundImage: `url(${Background})`,
+    //backgroundSize: 'auto',
+    backgroundSize: '100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center top',
     color: 'black'
 };
 
@@ -109,8 +116,6 @@ const types = {
     fontFamily: 'Segoe UI',
     color: '#ffffff',
     paddingTop: '20px',
-    //paddingBottom: '20px',
-    //backgroundColor: '#FFFFFF'
 };
 
 const coffees = {
