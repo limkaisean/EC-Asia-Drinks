@@ -10,6 +10,7 @@ import Header from '../../../components/Header';
 import Beverage from './Beverage';
 
 import BEVERAGES from '../../../menu';
+import Background from '../../../background.png';
 
 const TITLE = 'Checkout';
 const ORDER_SUCCESS_MSG = 'Your order has been successfully placed!';
@@ -95,7 +96,11 @@ function Checkout(props) {
 
 const main = {
     height: '100vh',
-    backgroundColor: '#263961',
+    backgroundImage: `url(${Background})`,
+    backgroundSize: '100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center top',
     fontFamily: 'Segoe UI',
     color: '#000000',
     overflow: 'scroll'

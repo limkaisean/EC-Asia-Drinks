@@ -5,6 +5,8 @@ import Header from '../../components/Header';
 import Order from './Order';
 import Statistics from './Statistics';
 
+import Background from '../../background.png';
+
 const TITLE = 'Orders';
 
 function Orders(props) {
@@ -51,8 +53,13 @@ const main = {
     position: 'absolute',
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: '#263961',
-    overflow: 'auto'
+    //backgroundColor: '#263961',
+    overflow: 'auto',
+    backgroundImage: `url(${Background})`,
+    backgroundSize: '100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center top',
 };
 
 const ordersList = {

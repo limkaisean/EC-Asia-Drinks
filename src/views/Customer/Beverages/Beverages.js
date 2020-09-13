@@ -62,7 +62,7 @@ function Beverages() {
                     if(group === 'COFFEE'){
                         return(
                             <div>
-                                <h1 style={types}>{group}</h1>
+                                <h1 style={types}><span style={highlight}>{group}</span></h1>
                                 <div style={coffees}>
                                     {Object.keys(BEVERAGES).map((name) => {
                                         if (BEVERAGES[name].group === group){
@@ -76,7 +76,7 @@ function Beverages() {
                     else{
                         return(
                             <div>
-                                <h1 style={types}>{group}</h1>
+                                <h1 style={types}><span style={highlight}>{group}</span></h1>
                                 <div style={beverages}>
                                 {Object.keys(BEVERAGES).map((name) => {
                                     if (BEVERAGES[name].group === group){
@@ -98,7 +98,6 @@ function Beverages() {
 const main = {
     //backgroundColor: '#0078D4',
     backgroundImage: `url(${Background})`,
-    //backgroundSize: 'auto',
     backgroundSize: '100%',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
@@ -118,6 +117,11 @@ const types = {
     paddingTop: '20px',
 };
 
+const highlight = {
+    backgroundColor: '#6e6e6e',
+    padding: '2.5px 10px'
+}
+
 const coffees = {
     display: 'flex',
     flexWrap: 'wrap'
@@ -128,7 +132,8 @@ const link = {
 }
 
 const a = {
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    backgroundColor: '#6e6e6e'
 }
 
 export default Beverages;
