@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Coffee from '../../../coffee.svg';
+import whiteCoffee from '../../../image.png';
 
 function Card(props){
     return(
@@ -24,11 +25,13 @@ const panel = {
     minWidth: '350px',
     flexBasis: '32%',
     margin: '1em auto',
-    backgroundColor: '#ddbfa1',
+    backgroundColor: '#FFFFFF',
     borderRadius: '2px',
-    fontFamily: 'Helvetica',
+    fontFamily: 'Segoe UI',
     display: 'flex',
     flexDirection: 'row',
+    // borderStyle: 'solid',
+    // borderColor: '#e6e6e6'
 };
 
 const name = {
@@ -46,8 +49,8 @@ const addButtonContainer = {
 };
 
 const addButton = {
-    backgroundColor: '#222831',
-    color: '#f3f3f3',
+    backgroundColor: '#263961',
+    color: 'white',
     fontSize: '50px',
     width: '60px',
     height: '60px',

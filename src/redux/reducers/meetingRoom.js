@@ -2,7 +2,7 @@
 import { SET_MEETING_ROOM } from '../actionTypes';
 
 const initialState = {
-    value: '0'
+    value: ''
 };
 
 export default function(state = initialState, action) {

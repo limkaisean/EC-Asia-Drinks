@@ -9,6 +9,7 @@ import PopUp from './PopUp';
 import Card from './Card';
 
 import BEVERAGES from '../../../menu';
+import Background from '../../../background.png';
 
 const TITLE = "Beverages";
 
@@ -55,13 +56,13 @@ function Beverages() {
                 </Link>
             </Snackbar>
             <div style={main}>
-                <Header title={TITLE}/>
+                <Header title={TITLE} classname='top'/>
                 {getGroups()}
                 {groups.map((group) =>{
                     if(group === 'COFFEE'){
                         return(
                             <div>
-                                <h1 style={types}>{group}</h1>
+                                <h1 style={types}><span style={highlight}>{group}</span></h1>
                                 <div style={coffees}>
                                     {Object.keys(BEVERAGES).map((name) => {
                                         if (BEVERAGES[name].group === group){
@@ -74,17 +75,20 @@ function Beverages() {
                     }
                     else{
                         return(
-                            <div style={beverages}>
-                                <h1 style={types}>{group}</h1>
+                            <div>
+                                <h1 style={types}><span style={highlight}>{group}</span></h1>
+                                <div style={beverages}>
                                 {Object.keys(BEVERAGES).map((name) => {
                                     if (BEVERAGES[name].group === group){
                                         return <Beverage info={BEVERAGES[name]} customClick={handleOpen.bind(this, BEVERAGES[name])}/>
                                     } 
                                 })}
+                                </div>
                             </div>
                         )
                     }
                 })}
+                <a href='#' style={a}>Back to top</a>
             </div> 
             {open ? <PopUp info={popupInfo} open={open} handleSubmit={handleBeverageAdded.bind(this)} handleClose={handleClose.bind(this)}/> : null}
         </div>
@@ -92,9 +96,13 @@ function Beverages() {
 }
 
 const main = {
-    //height: '100vh',
-    backgroundColor: '#B3C7D6FF',
-    color: '#6E4C1EFF'
+    //backgroundColor: '#0078D4',
+    backgroundImage: `url(${Background})`,
+    backgroundSize: '100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center top',
+    color: 'black'
 };
 
 const beverages = {
@@ -104,10 +112,15 @@ const beverages = {
 const types = {
     margin: 'auto',
     fontSize: '35px',
-    fontFamily: 'Helvetica',
-    color: 'black',
-    paddingTop: '20px'
+    fontFamily: 'Segoe UI',
+    color: '#ffffff',
+    paddingTop: '20px',
 };
+
+const highlight = {
+    backgroundColor: '#6e6e6e',
+    padding: '2.5px 10px'
+}
 
 const coffees = {
     display: 'flex',
@@ -116,6 +129,11 @@ const coffees = {
 
 const link = {
     textDecoration: 'none' 
+}
+
+const a = {
+    color: '#FFFFFF',
+    backgroundColor: '#6e6e6e'
 }
 
 export default Beverages;

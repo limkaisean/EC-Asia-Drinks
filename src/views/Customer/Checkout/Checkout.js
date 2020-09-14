@@ -10,6 +10,7 @@ import Header from '../../../components/Header';
 import Beverage from './Beverage';
 
 import BEVERAGES from '../../../menu';
+import Background from '../../../background.png';
 
 const TITLE = 'Checkout';
 const ORDER_SUCCESS_MSG = 'Your order has been successfully placed!';
@@ -54,6 +55,7 @@ function Checkout(props) {
     }, [props.websocket]);
     
     return (
+        <div>
         <div style={main}>
             <Snackbar anchorOrigin={{ vertical: 'top', horizontal: 'center' }} open={openSuccessToast} autoHideDuration={6000} onClose={() => setOpenSuccessToast(false)}>
                 <Alert onClose={() => setOpenSuccessToast(false)} severity="success">
@@ -87,29 +89,31 @@ function Checkout(props) {
                     Order
                 </Button>
             </div>
+        </div>
         </div> 
     )
 }
 
 const main = {
     height: '100vh',
-    backgroundColor: '#B3C7D6FF',
-    fontFamily: 'Helvetica',
-    display: 'flex',
-    flexDirection: 'column',
-    color: 'black'
+    backgroundImage: `url(${Background})`,
+    backgroundSize: '100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center top',
+    fontFamily: 'Segoe UI',
+    color: '#000000',
+    overflow: 'scroll'
 };
 
 const footing = {
-    backgroundColor: '#B3C7D6FF',
     paddingBottom: '40px',
     textAlign: 'right'
 };
 
 const beverages = {
     padding: '40px',
-    backgroundColor: '#B3C7D6FF',
-    fontFamily: 'Helvetica',
+    fontFamily: 'Segoe UI',
     fontSize: '32px'
 };
 
@@ -123,21 +127,22 @@ const orderButton = {
     minHeight: '60px',
     marginLeft: 'auto',
     marginRight: '40px',
-    fontFamily: 'Helvetica',
+    fontFamily: 'Segoe UI',
     fontSize: '23px',
-    backgroundColor: '#ddbfa1',
-    border: '3px solid #6E4C1EFF',
+    backgroundColor: '#FFFFFF',
+    color: '#000000',
     textTransform: 'none' 
 };
 
 const clearButton = {
     height: '50px',
     width: '150px',
-    fontFamily: 'Helvetica',
+    fontFamily: 'Segoe UI',
     fontSize: '18px',
     border: 'none',
     borderRadius: '8px',
-    textTransform: 'none'
+    textTransform: 'none',
+    color: '#FFFFFF'
 };
 
 

@@ -5,6 +5,8 @@ import Header from '../../components/Header';
 import Order from './Order';
 import Statistics from './Statistics';
 
+import Background from '../../background.png';
+
 const TITLE = 'Orders';
 
 function Orders(props) {
@@ -45,18 +47,24 @@ function Orders(props) {
 /* CSS */
 
 const main = {
-    //height: '100%',
+    height: '100%',
     width: '100%',
     margin: '0',
     position: 'absolute',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    //backgroundColor: '#263961',
+    overflow: 'auto',
+    backgroundImage: `url(${Background})`,
+    backgroundSize: '100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center top',
 };
 
 const ordersList = {
     height: '90%',
     width: '100%',
-    backgroundColor: '#B3C7D6FF',
 };
 
 export default Orders;

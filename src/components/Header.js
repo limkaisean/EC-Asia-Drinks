@@ -14,6 +14,7 @@ import TextField from '@material-ui/core/TextField';
 import { setMeetingRoom } from '../redux/actions';
 import MicrosoftLogo from '../MicrosoftLogo.svg';
 import Cart from '../shoppingCart.png';
+import Banner from '../banner.png';
 
 const useStyles = makeStyles({
     list: {
@@ -99,11 +100,11 @@ function Header(props) {
                 {props.isBarista ? <span></span>: list(anchor)}
             </Drawer>
             <div style={middle}>
-                <span>{props.title}</span>
+                <span style={title}>{props.title}</span>
                 <span style={subtitle}>{
                     props.isBarista ? 
                     (<span>barista</span>) : 
-                    (<span>Meeting Room <b>{meetingRoom}</b></span>)
+                    (<span>Meeting Room <b style={meetingRoomTitle}>{meetingRoom}</b></span>)
                 }
                 </span>
             </div>
@@ -122,13 +123,13 @@ function Header(props) {
 
 const header = {
     minHeight: '150px',
-    height: '10%',
+    height: '20%',
     minWidth: '375px',
     width: '100%',
-    backgroundColor: '#669DB3FF',
-    color: '#F3F3F3',
+    backgroundColor: '#263961',
+    color: '#000000',
     fontSize: '40px',
-    fontFamily: 'Helvetica',
+    fontFamily: 'Segoe UI',
     fontWeight: '300',
     display: 'flex',
     flexDirection: 'row',
@@ -172,7 +173,7 @@ const drawerLogo = {
 const drawerLabel = {
     paddingBottom: '20px',
     textAlign: 'center',
-    fontFamily: 'Helvetica',
+    fontFamily: 'Segoe UI',
     fontWeight: '300',
     fontSize: '20px',
     color: '#27496D',
@@ -185,8 +186,10 @@ const drawer = {
 };
 
 const subtitle = {
-    paddingTop: '20px',
-    fontSize: '20px'
+    //paddingTop: '20px',
+    fontSize: '20px',
+    color: '#FFFFFF',
+    fontWeight: '500',
 };
 
 const meetingRoomsStyle = { 
@@ -201,7 +204,7 @@ const baristaLink = {
     left: '25%',
     right: '25%',
     bottom: 10,
-    fontFamily: 'Helvetica',
+    fontFamily: 'Segoe UI',
     fontSize: '18px',
     textDecoration: 'none',
     color: '#27496D'
@@ -210,6 +213,15 @@ const baristaLink = {
 const cart = {
     width: '40px',
     margin: '40px 40px 25px 0px'
+}
+
+const title = {
+    color: '#FFFFFF',
+    fontWeight: '500',
+}
+
+const meetingRoomTitle = {
+    color: '#FFFFFF',
 }
 
 export default Header;

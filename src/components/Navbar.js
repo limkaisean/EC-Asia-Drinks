@@ -11,7 +11,7 @@ const link = {
   paddingBottom: '10px',
   textDecoration: 'none',
   textAlign: 'center',
-  fontFamily: 'Helvetica',
+  fontFamily: 'Segoe UI',
   fontWeight: 'normal',
   fontSize: '25px',
   color: '#27496D',

@@ -8,8 +8,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 function CompletedPopup(props) {
     return (
         <div style={header}>
-            <div>complete order&nbsp;<span style={id}>#{props.id}</span>?</div>
-            <Button onClick={props.handleConfirm} style={yesButton}>yes</Button>
+            <div>Complete order&nbsp;<span style={id}>#{props.id}</span>?</div>
+            <Button onClick={props.handleConfirm} style={yesButton}>Yes</Button>
         </div>
     );
 }
@@ -17,9 +17,9 @@ function CompletedPopup(props) {
 /* CSS */
 
 const header = {
-    backgroundColor: '#FFECD0',
-    fontFamily: 'Lato',
-    color: '#0074E4',
+    backgroundColor: '#263961',
+    fontFamily: 'Segoe UI',
+    color: '#ffffff',
     fontSize: '50px',
     fontWeight: '300',
     minHeight: '200px',
@@ -37,11 +37,11 @@ const id = {
 const yesButton = {
     marginTop: '20px',
     borderRadius: '25px',
-    backgroundColor: '#0074E4',
-    fontFamily: 'Lato',
+    backgroundColor: '#ffffff',
+    fontFamily: 'Segoe UI',
     fontWeight: '700',
     fontSize: '26px',
-    color: '#f3f3f3',
+    color: '#263961',
     height: '70px',
     width: '40%'
 };

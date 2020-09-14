@@ -38,7 +38,7 @@ const panel = {
     paddingBottom: '20px',
     height: '10%',
     width: '100%',
-    backgroundColor: '#ddbfa1',
+    backgroundColor: '#ffffff',
     borderRadius: '12px',
     display: 'flex',
     flexDirection: 'row',
@@ -51,7 +51,7 @@ const name = {
     fontSize: '28px',
     padding: '30px 0px 30px 30px',
     fontWeight: 'normal',
-    color: '#6E4C1EFF'
+    color: '#000000'
 };
 
 const options = {

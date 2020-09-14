@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 import Header from '../../../components/Header';
 import Order from './Order';
 
+import Background from '../../../background.png';
+
 const TITLE = 'Orders';
 
 function Orders(props) {
@@ -21,7 +23,7 @@ function Orders(props) {
         });
 
         props.websocket.on('update_status_relay', data => {
-            setOrders(orders);
+            setOrders({});
         });
         
         props.websocket.emit('confirmed_orders_request', { meetingRoom: meetingRoom });
@@ -48,12 +50,16 @@ const main = {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
+    backgroundImage: `url(${Background})`,
+    backgroundSize: '100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center top',
 };
 
 const ordersList = {
     height: '90%',
     width: '100%',
-    backgroundColor: '#B3C7D6FF',
 };
 
 export default Orders;

@@ -47,14 +47,14 @@ function OrderPopup(props) {
 /* CSS */
 
 const header = {
-    backgroundColor: '#2460A7FF',
-    color: '#f3f3f3',
+    backgroundColor: '#ffffff',
+    color: '#000000',
     fontSize: '24px',
     display: 'flex',
 };
 
 const body = {
-    backgroundColor: '#B3C7D6FF'
+    backgroundColor: '#263961'
 };
 
 const bottomInfo = {
@@ -81,7 +81,7 @@ const timeStyle = {
 };
 
 const closeButton = {
-    color: "#27496D"
+    color: "#ffffff"
 };
 
 const bold = {
