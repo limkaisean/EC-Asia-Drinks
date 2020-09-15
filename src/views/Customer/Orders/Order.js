@@ -139,7 +139,6 @@ const timeStyle = {
 };
 
 const statusStyle = {
-    //display: 'inline-block',
     flex: '0 1 40%'
 }
 

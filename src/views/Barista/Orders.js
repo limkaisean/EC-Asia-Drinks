@@ -53,7 +53,6 @@ const main = {
     position: 'absolute',
     display: 'flex',
     flexDirection: 'column',
-    //backgroundColor: '#263961',
     overflow: 'auto',
     backgroundImage: `url(${Background})`,
     backgroundSize: '100%',

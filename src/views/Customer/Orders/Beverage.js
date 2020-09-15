@@ -78,7 +78,6 @@ const quantity = {
     color: 'black',
     fontSize: '40px',
     fontWeight: '900',
-    //color: '#eb8242',
     borderRadius: '20%',
     border: 'none',
     marginRight: '30px'

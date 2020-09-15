@@ -30,8 +30,6 @@ const panel = {
     fontFamily: 'Segoe UI',
     display: 'flex',
     flexDirection: 'row',
-    // borderStyle: 'solid',
-    // borderColor: '#e6e6e6'
 };
 
 const name = {

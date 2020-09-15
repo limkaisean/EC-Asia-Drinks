@@ -139,7 +139,6 @@ function PopUp(props){
 
 const modal = {
     display: 'flex',
-    //display: 'block',
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'auto',
@@ -154,11 +153,7 @@ const popup = {
     height: '75%',
     width: '75%',
     outline: 'none',
-    //padding: '5%',
     padding: '2.5%',
-    // paddingTop: '2.5%',
-    // paddingBottom: '2.5%',
-    // overflowY: 'auto',
     scrollPaddingTop: '200px',
     borderRadius: '20px',
     fontFamily: 'Segoe UI',
