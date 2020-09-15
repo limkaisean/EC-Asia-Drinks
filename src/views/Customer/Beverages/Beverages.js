@@ -96,7 +96,6 @@ function Beverages() {
 }
 
 const main = {
-    //backgroundColor: '#0078D4',
     backgroundImage: `url(${Background})`,
     backgroundSize: '100%',
     backgroundRepeat: 'no-repeat',
