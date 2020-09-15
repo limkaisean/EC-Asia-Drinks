@@ -28,6 +28,10 @@ function PopUp(props){
             optionValues['Comment'] = comments;
         }
 
+        if (name !== ''){
+            optionValues['Name'] = name;
+        }
+
         if (quantity !== ''){
             dispatch(addBeverage({ ...props.info, quantity: quantity, optionValues: optionValues}));
             props.handleClose();
@@ -40,6 +44,7 @@ function PopUp(props){
     }
     const [quantity, setQuantity] = React.useState('');
     const [comments, setComments] = React.useState('');
+    const [name, setName] = React.useState('');
     const [options, setOptions] = React.useState({});
     const [failure, setFailure] = React.useState(false);
 
@@ -53,6 +58,10 @@ function PopUp(props){
 
     const onTextChange = (event) => {
         setComments(event.target.value);
+    }
+
+    const onNameChange = (event) => {
+        setName(event.target.value);
     }
 
     const onQuantityChange = (event) => {
@@ -83,12 +92,20 @@ function PopUp(props){
                             )
                         })
                     }
-                    <div>
+                    <div style={textbox}>
                         <TextField
                             placeholder="Additional comments"
                             rows={5}
                             rowsMax={10}
                             onChange={onTextChange}
+                        />
+                    </div>
+                    <div>
+                        <TextField
+                            placeholder="Name"
+                            rows={5}
+                            rowsMax={10}
+                            onChange={onNameChange}
                         />
                     </div>
                     <div>
@@ -134,7 +151,7 @@ const popup = {
     position: 'absolute',
     backgroundColor: 'white',
     margin: 'auto',
-    height: 'auto',
+    height: '75%',
     width: '75%',
     outline: 'none',
     //padding: '5%',
@@ -145,7 +162,8 @@ const popup = {
     scrollPaddingTop: '200px',
     borderRadius: '20px',
     fontFamily: 'Segoe UI',
-    fontSize: '18px'
+    fontSize: '18px',
+    overflow: 'auto'
 }
 
 const radio = {
@@ -155,7 +173,7 @@ const radio = {
 }
 
 const select = {
-    marginTop: '2.5%',
+    marginTop: '20px',
     minWidth: '120'
 }
 
@@ -165,6 +183,10 @@ const buttons = {
 
 const button = {
     marginRight: '2.5%'
+}
+
+const textbox = {
+    paddingBottom: '20px'
 }
 
 export default PopUp;
