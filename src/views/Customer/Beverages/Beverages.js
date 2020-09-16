@@ -97,10 +97,10 @@ function Beverages() {
 
 const main = {
     backgroundImage: `url(${Background})`,
-    backgroundSize: '100%',
+    backgroundSize: '100% 100%',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
-    backgroundPosition: 'center top',
+    backgroundPosition: 'center',
     color: 'black'
 };
 
