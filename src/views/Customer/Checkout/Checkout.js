@@ -19,7 +19,9 @@ const EMPTY_CART_MESSAGE = 'Add beverages from the menu!';
 
 function handleOrder(websocket, meetingRoom, byIds) {
     console.log(byIds);
-    if (Object.keys(byIds).length > 0) websocket.emit('order_request', {meetingRoom: meetingRoom, beverages: Object.values(byIds)});
+    if (Object.keys(byIds).length > 0 && meetingRoom !== '') {
+        websocket.emit('order_request', {meetingRoom: meetingRoom, beverages: Object.values(byIds)});
+    }
 }
 
 function Alert(props) {
@@ -97,10 +99,10 @@ function Checkout(props) {
 const main = {
     height: '100vh',
     backgroundImage: `url(${Background})`,
-    backgroundSize: '100%',
+    backgroundSize: '100% 100%',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
-    backgroundPosition: 'center top',
+    backgroundPosition: 'center',
     fontFamily: 'Segoe UI',
     color: '#000000',
     overflow: 'scroll'
