@@ -1,4 +1,14 @@
 export default {
+    'Boba': {
+        name: 'boba',
+        description: 'asian shit',
+        group: 'TEA',
+        options: [
+            name: 'Hot/Cold',
+            type: 'radio',
+            values: ['Hot', 'Cold']
+        ]
+    },
     'Espresso': {
         name: 'Espresso',
         description: '',
