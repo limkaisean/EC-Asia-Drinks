@@ -1,6 +1,6 @@
 export default {
     'Boba': {
-        name: 'Bboba',
+        name: 'Boba',
         description: 'asian shit',
         group: 'TEA',
         options: [
