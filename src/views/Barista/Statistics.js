@@ -47,7 +47,7 @@ function Statistics(props) {
 
 const main = {
     minHeight: '90px',
-    height: 'auto',
+    height: '10%',
     backgroundColor: '#5CC2F2',
     display: 'flex',
     flexDirection: 'row',
