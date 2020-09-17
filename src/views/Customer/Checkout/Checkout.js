@@ -10,7 +10,7 @@ import Header from '../../../components/Header';
 import Beverage from './Beverage';
 
 import BEVERAGES from '../../../menu';
-import Background from '../../../background.png';
+import Background from '../../../background.jpg';
 
 const TITLE = 'Checkout';
 const ORDER_SUCCESS_MSG = 'Your order has been successfully placed!';

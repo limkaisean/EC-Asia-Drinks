@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import Header from '../../../components/Header';
 import Order from './Order';
 
-import Background from '../../../background.png';
+import Background from '../../../background.jpg';
 
 const TITLE = 'Orders';
 

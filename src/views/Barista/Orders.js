@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import Order from './Order';
 import Statistics from './Statistics';
 
-import Background from '../../background.png';
+import Background from '../../background.jpg';
 
 const TITLE = 'Orders';
 
