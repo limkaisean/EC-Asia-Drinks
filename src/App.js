@@ -13,7 +13,7 @@ import CustomerOrders from './views/Customer/Orders/Orders';
 import BaristaOrders from './views/Barista/Orders';
 
 const Endpoint = process.env.NODE_ENV === 'development' ? 
-  'http://127.0.0.1:5000' : 'https://ec-asia-app.azurewebsites.net/';
+  'http://127.0.0.1:5000' : 'https://ec-drinks.azurewebsites.net/';
 
 function App() {
   const [websocket, setWebsocket] = useState(null);
