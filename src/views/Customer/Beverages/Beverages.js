@@ -9,7 +9,7 @@ import PopUp from './PopUp';
 import Card from './Card';
 
 import BEVERAGES from '../../../menu';
-import Background from '../../../background.png';
+import Background from '../../../background.jpg';
 
 const TITLE = "Beverages";
 
